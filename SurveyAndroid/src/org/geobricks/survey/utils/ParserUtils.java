@@ -6,11 +6,11 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
+import org.geobricks.survey.bean.QuestionBean;
+import org.geobricks.survey.bean.SurveyBean;
 import org.geobricks.survey.constants.QUESTIONINFO;
 import org.geobricks.survey.constants.QUESTIONTYPE;
 import org.geobricks.survey.constants.SURVEYINFO;
-import org.geobricks.survey.structure.QuestionBean;
-import org.geobricks.survey.structure.SurveyBean;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;

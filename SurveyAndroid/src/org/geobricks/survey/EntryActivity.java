@@ -1,7 +1,7 @@
 package org.geobricks.survey;
 
-import org.geobricks.survey.structure.QuestionBean;
-import org.geobricks.survey.structure.SurveyBean;
+import org.geobricks.survey.bean.QuestionBean;
+import org.geobricks.survey.bean.SurveyBean;
 import org.geobricks.survey.utils.ParserUtils;
 
 import android.app.Activity;

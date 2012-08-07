@@ -1,4 +1,4 @@
-package org.geobricks.survey.structure;
+package org.geobricks.survey.bean;
 
 import java.util.List;
 
