@@ -24,7 +24,7 @@ import android.widget.LinearLayout;
 	            // the view hierarchy; it would just never be used.
 	            return null;
 	        }
-			return (LinearLayout) inflater.inflate(R.layout.question2, container, false);
+			return (LinearLayout) inflater.inflate(R.layout.question3, container, false);
 			
 		}
 	}

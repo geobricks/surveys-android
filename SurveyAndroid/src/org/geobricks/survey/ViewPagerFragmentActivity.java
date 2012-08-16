@@ -1,9 +1,13 @@
-package org.geobricks.survey.activies;
+package org.geobricks.survey;
 
 import java.util.List;
 import java.util.Vector;
 
 import org.geobricks.survey.R;
+import org.geobricks.survey.activies.PagerAdapter;
+import org.geobricks.survey.activies.Tab1Fragment;
+import org.geobricks.survey.activies.Tab2Fragment;
+import org.geobricks.survey.activies.Tab3Fragment;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -23,8 +27,7 @@ public class ViewPagerFragmentActivity extends FragmentActivity {
 		@Override
 		protected void onCreate(Bundle savedInstanceState) {
 			super.onCreate(savedInstanceState);
-			super.setContentView(R.layout.questions);
-			Log.i("output", "creaing");
+			super.setContentView(R.layout.viewpager);
 			//initialsie the pager
 			this.initialisePaging();
 		}
