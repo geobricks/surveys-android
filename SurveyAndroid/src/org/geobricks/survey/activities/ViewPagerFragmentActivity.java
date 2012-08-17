@@ -1,13 +1,11 @@
-package org.geobricks.survey;
+package org.geobricks.survey.activities;
 
 import java.util.List;
 import java.util.Vector;
 
 import org.geobricks.survey.R;
-import org.geobricks.survey.activies.PagerAdapter;
-import org.geobricks.survey.activies.Tab1Fragment;
-import org.geobricks.survey.activies.Tab2Fragment;
-import org.geobricks.survey.activies.Tab3Fragment;
+import org.geobricks.survey.R.id;
+import org.geobricks.survey.R.layout;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;

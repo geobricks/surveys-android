@@ -1,4 +1,4 @@
-package org.geobricks.survey.activies;
+package org.geobricks.survey.activities;
 
 import org.geobricks.survey.R;
 

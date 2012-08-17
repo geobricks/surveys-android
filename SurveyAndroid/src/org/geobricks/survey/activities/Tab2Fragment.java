@@ -1,4 +1,4 @@
-package org.geobricks.survey.activies;
+package org.geobricks.survey.activities;
 
 
 import org.geobricks.survey.R;
@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
 
-	public class Tab3Fragment extends Fragment {
+	public class Tab2Fragment extends Fragment {
 		public View onCreateView(LayoutInflater inflater, ViewGroup container,
 				Bundle savedInstanceState) {
 			if (container == null) {

@@ -19,7 +19,7 @@
             </intent-filter>
         </activity>-->
         
-           <activity android:name=".ViewPagerFragmentActivity"
+           <activity android:name=".activities.ViewPagerFragmentActivity"
              android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
