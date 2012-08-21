@@ -8,6 +8,7 @@ import java.util.Map;
 
 import org.geobricks.survey.bean.QuestionBean;
 import org.geobricks.survey.bean.SurveyBean;
+import org.geobricks.survey.constants.CONSTANTS;
 import org.geobricks.survey.constants.QUESTIONINFO;
 import org.geobricks.survey.constants.QUESTIONTYPE;
 import org.geobricks.survey.constants.SURVEYINFO;
@@ -84,9 +85,9 @@ public class ParserUtils {
 			Log.i("JSON", c.toString() + " | " + key.toUpperCase());
 			switch (c) {
 				case QUESTION_NUMBER: question.setNumber(map.get(key)); break;
-				case QUESTION_TEXT: question.setText(map.get(key)); break;
+				case QUESTION_TEXT: question.setText(getText(map.get(key), CONSTANTS.LOCALE)); break;
 				case QUESTION_TYPE: Log.i("JSON", map.get(key).toUpperCase()); question.setQuestionType(QUESTIONTYPE.valueOf(map.get(key).toUpperCase())); break;
-				case QUESTION_CHOICES:  break;
+				case QUESTION_CHOICES: question.getQuestionChoices().setChoices(getQuestionChoices(map.get(key), CONSTANTS.LOCALE)); break;
 				default: break;
 			}
 		}
@@ -94,6 +95,46 @@ public class ParserUtils {
 		return question;
 	}
 	
+	private static String getText(String json, String language) {
+		String s = "The language is not supported";
+		Log.i("JSON", json);
+		 try {
+			 JSONArray array = (JSONArray) new JSONTokener(json).nextValue();
+			 for(int i=0; i <  array.length(); i++) {
+					JSONObject object = (JSONObject) array.get(i);
+					Log.i("JSON", "!" + i + " | " + array.get(i));
+					Iterator iter = object.keys();
+					Map<String, String> map = new HashMap<String, String>();
+					while (iter.hasNext()) {
+						String key = (String) iter.next();
+						if ( key.toLowerCase().equals(language)) {
+							return object.getString(key);
+						}
+					}
+				}
+		 } catch (JSONException e) {Log.e("JSON", e.getMessage());}
+
+		return s;
+	}
 	
-	
+	private static List<Data> getQuestionChoices(String json, String language) {
+		List<Data> data = new ArrayList<Data>();
+		Log.i("QUESTION CHOICES ", json);
+		String getJson = getText(json, language);
+		Log.i("QUESTION CHOICES s ", getJson);
+		 try {
+			 JSONArray array = (JSONArray) new JSONTokener(getJson).nextValue();
+			 for(int i=0; i <  array.length(); i++) {
+				JSONObject object = (JSONObject) array.get(i);
+				Log.i("JSON", "!" + i + " | " + array.get(i));
+				Iterator iter = object.keys();
+				while (iter.hasNext()) {
+					String key = (String) iter.next();
+					String value = object.getString(key);
+					data.add(new Data(key, value));
+				}
+			}
+		} catch (JSONException e) {Log.e("JSON", e.getMessage());}
+		return data;
+	}
 }

@@ -8,4 +8,13 @@ public class QuestionChoicesBean {
 	
 	List<Data> choices;
 
+	public List<Data> getChoices() {
+		return choices;
+	}
+
+	public void setChoices(List<Data> choices) {
+		this.choices = choices;
+	}
+
+	
 }

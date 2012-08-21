@@ -7,7 +7,7 @@
 			"question_number" : "1",
 			"question_text" : [
 				{
-					"en" : "chicken?",
+					"en" : "chicken english?",
 					"es" : "chicken?",
 					"fr" : "chicken?"
 				}
@@ -18,7 +18,7 @@
 			"question_number" : "2",
 			"question_text" : [
 				{
-					"en" : "chicken?",
+					"en" : "poultry english?",
 					"es" : "chicken?",
 					"fr" : "chicken?"
 				}
@@ -29,7 +29,7 @@
 			"question_number" : "3",
 			"question_text" : [
 				{
-					"en" : "chicken?",
+					"en" : "chicken english?",
 					"es" : "chicken?",
 					"fr" : "chicken?"
 				}
@@ -57,7 +57,32 @@
 				}
 			],
 			"question_type" : "multiple_choice",
-			"question_choices" : ["chicken 1", "chicken 2", "chicken 3"]
+			"question_choices" : [ 
+					{
+						"en" : [ 
+								{"1" : "chicken 1", "2": "chicken 2", "3": "chicken 3" }
+							]					
+					}
+			]
+		},
+				{
+			"question_number" : "6",
+			"question_text" : [
+				{
+					"en" : "chicken?",
+					"es" : "chicken?",
+					"fr" : "chicken?"
+				}
+			],
+			"question_type" : "single_choice",
+			"question_choices" : [ 
+					{
+						"en" : [ 
+								{"1" : "chicken 1", "2": "chicken 2", "3": "chicken 3" }
+							]					
+					}
+			]
 		}
+		
 	]
 }

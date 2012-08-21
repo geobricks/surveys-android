@@ -4,13 +4,17 @@ import org.geobricks.survey.constants.QUESTIONTYPE;
 
 public class QuestionBean {
 	
+	String title;
+	
 	String number;
 	
 	String text;
 	
 	QUESTIONTYPE questionType;
 	
-	QuestionChoicesBean questionChoices;
+	QuestionChoicesBean questionChoices = new QuestionChoicesBean();
+	
+	String result = "";
 
 	public String getNumber() {
 		return number;
@@ -43,7 +47,23 @@ public class QuestionBean {
 	public void setQuestionChoices(QuestionChoicesBean questionChoices) {
 		this.questionChoices = questionChoices;
 	}
-	
-	
 
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public String getResult() {
+		return result;
+	}
+
+	public void setResult(String result) {
+		this.result = result;
+	}
+	
+	
+	
 }

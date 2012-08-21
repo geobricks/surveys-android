@@ -3,5 +3,9 @@
 
     <string name="hello">Hello World, SurveyAndroidActivity!</string>
     <string name="app_name">SurveyAndroid</string>
+    <string name="title">Title</string>
+    <string name="next">Next</string>
+    <string name="back">Back</string>
+    
 
 </resources>

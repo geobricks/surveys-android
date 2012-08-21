@@ -1,13 +1,13 @@
-package org.geobricks.survey.client;
+package org.geobricks.survey.questions;
 
 
 
-import java.util.List;
 import java.util.Map;
 
 import android.content.Context;
 import android.widget.LinearLayout;
-import org.geobricks.survey.client.Question;
+
+import org.geobricks.survey.questions.Question;
 
 public class Survey {
 	
