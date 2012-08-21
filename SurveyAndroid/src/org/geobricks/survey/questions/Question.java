@@ -5,10 +5,19 @@ import java.util.UUID;
 import org.geobricks.survey.R;
 import org.geobricks.survey.bean.QuestionBean;
 import org.geobricks.survey.constants.QUESTIONTYPE;
+import org.geobricks.survey.questions.types.QuestionDate;
+import org.geobricks.survey.questions.types.QuestionEditText;
+import org.geobricks.survey.questions.types.QuestionListView;
+import org.geobricks.survey.questions.types.QuestionSpinner;
+import org.geobricks.survey.questions.types.QuestionValue;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.text.Html;
+import android.text.InputType;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
@@ -17,7 +26,9 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -32,7 +43,9 @@ public class Question extends Fragment {
 	
 	LinearLayout panel;
 	
- 	int spinner_layout = android.R.layout.simple_spinner_item;
+	QuestionValue questionValue;
+	
+// 	int spinner_layout = android.R.layout.simple_spinner_item;
 
 	
 	public static Question newInstance(QuestionBean bean) {
@@ -103,15 +116,24 @@ public class Question extends Fragment {
 		panel.setBackgroundColor(Color.WHITE);
 		scrollView.setBackgroundColor(Color.WHITE);
 
-		TextView title = new TextView(getActivity());
-		title.setPadding(padding, padding, padding, padding);
-		panel.addView(title);
-		title.setText(text);
+		LinearLayout h = new LinearLayout(getActivity());
+		h.setOrientation(LinearLayout.HORIZONTAL);
+		TextView t = new TextView(getActivity());
+		t.setPadding(padding, padding, padding, padding);
+		h.addView(t);
+		t.setTextAppearance(getActivity(), R.style.QuestionTitle);
+		t.setText(text);
 		
-		TextView uuid = new TextView(getActivity());
-		uuid.setPadding(padding, padding, padding, padding);
-		panel.addView(uuid);
-		uuid.setText(String.valueOf(UUID.randomUUID()));
+		if( qb.getInfo() != null ) {
+			h.addView(addinfo(qb.getInfo()));
+		}
+		
+		panel.addView(h);
+		
+//		TextView uuid = new TextView(getActivity());
+//		uuid.setPadding(padding, padding, padding, padding);
+//		panel.addView(uuid);
+//		uuid.setText(String.valueOf(UUID.randomUUID()));
 
 
 		panel.addView(createForm(qb));
@@ -119,6 +141,21 @@ public class Question extends Fragment {
 
 		// return inflater.inflate(R.layout.question, container, false);
 		return scrollView;
+	}
+	
+	private ImageView addinfo(String info) {
+		ImageView i = new ImageView(getActivity());
+		i.setImageResource(R.drawable.onebit_38);
+		final AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+		builder.setMessage(Html.fromHtml(info)).setPositiveButton(R.string.ok, null);
+		i.setOnClickListener(new View.OnClickListener() {	
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				builder.show();
+			}
+		});
+		return i;
 	}
 
 	private LinearLayout createForm(QuestionBean qb) {
@@ -130,23 +167,35 @@ public class Question extends Fragment {
 		llp.setMargins(5, 5, 5, 5);
 		switch (qb.getQuestionType()) {
 		case SINGLE_VALUE_NUMBER:
-			EditText editText = new EditText(getActivity());
-			panel.addView(editText);
+			questionValue = new QuestionEditText(getActivity());
+			((QuestionEditText) questionValue).build(InputType.TYPE_CLASS_NUMBER);
 			break;
 		case SINGLE_VALUE_TEXT:
-			EditText editText2 = new EditText(getActivity());
-			panel.addView(editText2);
+			questionValue = new QuestionEditText(getActivity());
+			((QuestionEditText) questionValue).build(null);
+			break;
+		case FREE_TEXT:
+			questionValue = new QuestionEditText(getActivity());
+			((QuestionEditText) questionValue).build(null);
+			break;
+		case SINGLE_VALUE_DATE:
+			questionValue = new QuestionDate(getActivity());
+			((QuestionDate) questionValue).build();
 			break;
 		case SINGLE_CHOICE:
-			Spinner spinner = new Spinner(getActivity());
-			ArrayAdapter adapter = new ArrayAdapter(getActivity(), spinner_layout, qb.getQuestionChoices().getChoices());
-			spinner.setAdapter(adapter);
-			panel.addView(spinner);
+			questionValue = new QuestionSpinner(getActivity());
+			((QuestionSpinner) questionValue).build(null, qb.getQuestionChoices().getChoices());
+			break;
+		case MULTIPLE_CHOICE:
+			questionValue = new QuestionListView(getActivity());
+			((QuestionListView) questionValue).build(ListView.CHOICE_MODE_MULTIPLE, qb.getQuestionChoices().getChoices());
 			break;
 
-		default:
-			break;
+		default: break;
 		}
+		try {
+			panel.addView(questionValue.getPanel());
+		}catch(Exception e ){}
 		return panel;
 	}
 	

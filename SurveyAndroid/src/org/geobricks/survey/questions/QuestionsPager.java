@@ -44,10 +44,13 @@ public class QuestionsPager extends FragmentActivity {
 		private void initialisePaging() {
 
 			List<Question> fragments = new Vector<Question>();
-			SurveyBean surveyBean = ParserUtils.parseJSON(this, R.raw.survey);
+			SurveyBean surveyBean = ParserUtils.parseJSON(this, R.raw.surveyhuge);
 			
+			int i = 1;
 			for(QuestionBean question : surveyBean.getQuestions()) {
+				question.setNumber(String.valueOf(i)); // TODO; it was a test
 				fragments.add((Question) Question.newInstance(question));
+				i++;
 			}
 
 			this.mPagerAdapter  = new QuestionsPagerAdapter(super.getSupportFragmentManager(), fragments);

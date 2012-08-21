@@ -1,35 +1,37 @@
-<?xml version="1.0" encoding="utf-8"?>
-	<LinearLayout
-	  xmlns:android="http://schemas.android.com/apk/res/android"
-	  android:layout_width="fill_parent"
-	  android:layout_height="fill_parent"
-	  android:orientation="vertical"
-	  >
-	  <LinearLayout
-	  xmlns:android="http://schemas.android.com/apk/res/android"
-	  android:layout_width="wrap_content"
-	  android:layout_height="wrap_content"
-	  android:orientation="horizontal"
-	  >
-		  	<Button
-		        android:id="@+id/back"
-		        android:layout_width="wrap_content"
-		        android:layout_height="wrap_content"
-		        android:text="@string/back" 
-		    />  	  	  
-		  	<Button
-		        android:id="@+id/next"
-		        android:layout_width="wrap_content"
-		        android:layout_height="wrap_content"
-		        android:text="@string/next" 
-		    />
-	  	</LinearLayout>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
 
+    >
 	  <android.support.v4.view.ViewPager
 	  	android:id="@+android:id/viewpager"
 	  	android:layout_width="fill_parent"
 	 	android:layout_height="fill_parent"
 	  	/>
+	  
+	  <Button
+        android:id="@+id/back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|left"
+        android:drawableLeft="@drawable/onebit_29"
+        android:text="@string/back" />
+	  
+	  <Button
+        android:id="@+id/summary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center"
+        android:drawableLeft="@drawable/onebit_39"
+        android:text="@string/summary" />
 
-
-</LinearLayout>
+    <Button
+        android:id="@+id/next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right"
+         android:drawableLeft="@drawable/onebit_27"
+        
+        android:text="@string/next" />
+</FrameLayout>

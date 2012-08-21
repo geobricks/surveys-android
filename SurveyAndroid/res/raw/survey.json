@@ -5,6 +5,7 @@
 	"survey_questions" : [
 		{
 			"question_number" : "1",
+			"question_info" : "chicken chicken chicken chicken <b>chickcen</b> chicken",
 			"question_text" : [
 				{
 					"en" : "chicken english?",

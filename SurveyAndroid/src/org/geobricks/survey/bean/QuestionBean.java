@@ -8,6 +8,8 @@ public class QuestionBean {
 	
 	String number;
 	
+	String info;
+	
 	String text;
 	
 	QUESTIONTYPE questionType;
@@ -62,6 +64,14 @@ public class QuestionBean {
 
 	public void setResult(String result) {
 		this.result = result;
+	}
+
+	public String getInfo() {
+		return info;
+	}
+
+	public void setInfo(String info) {
+		this.info = info;
 	}
 	
 	

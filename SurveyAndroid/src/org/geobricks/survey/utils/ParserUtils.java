@@ -84,7 +84,9 @@ public class ParserUtils {
 			QUESTIONINFO c = QUESTIONINFO.valueOf(key.toUpperCase());
 			Log.i("JSON", c.toString() + " | " + key.toUpperCase());
 			switch (c) {
+				case QUESTION_TITLE: question.setTitle(map.get(key)); break;
 				case QUESTION_NUMBER: question.setNumber(map.get(key)); break;
+				case QUESTION_INFO: question.setInfo(map.get(key)); break;
 				case QUESTION_TEXT: question.setText(getText(map.get(key), CONSTANTS.LOCALE)); break;
 				case QUESTION_TYPE: Log.i("JSON", map.get(key).toUpperCase()); question.setQuestionType(QUESTIONTYPE.valueOf(map.get(key).toUpperCase())); break;
 				case QUESTION_CHOICES: question.getQuestionChoices().setChoices(getQuestionChoices(map.get(key), CONSTANTS.LOCALE)); break;
