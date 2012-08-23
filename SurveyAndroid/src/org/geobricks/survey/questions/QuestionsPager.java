@@ -37,6 +37,8 @@ public class QuestionsPager extends FragmentActivity {
 		@Override
 		protected void onCreate(Bundle savedInstanceState) {
 			super.onCreate(savedInstanceState);
+//			setContentView(R.layout.viewpager3);
+
 			setContentView(R.layout.viewpager2);
 //			setContentView(R.layout.viewpager);
 			//initialsie the pager

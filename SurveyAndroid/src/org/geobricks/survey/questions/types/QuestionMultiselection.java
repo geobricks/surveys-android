@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import org.geobricks.survey.R;
+import org.geobricks.survey.utils.Data;
 
 import android.app.Activity;
 import android.content.Context;
@@ -28,15 +29,15 @@ public class QuestionMultiselection extends QuestionValue  {
 		
   
   private ListView mainListView ;
-  private Planet[] planets ;
-  private ArrayAdapter<Planet> listAdapter ;
+  private Data[] values ;
+  private ArrayAdapter<Data> listAdapter ;
   
   public QuestionMultiselection(Context context) {
 	  this.context = context;
   }
   
   /** Called when the activity is first created. */
-  public LinearLayout build() {
+  public LinearLayout build(List<Data> data) {
 	  panel = new LinearLayout(context);
 //	  panel.setLayoutParams(param);
 	  
@@ -50,9 +51,9 @@ public class QuestionMultiselection extends QuestionValue  {
       @Override
       public void onItemClick( AdapterView<?> parent, View item, 
                                int position, long id) {
-        Planet planet = listAdapter.getItem( position );
+        Data planet = listAdapter.getItem( position );
         planet.toggleChecked();
-        PlanetViewHolder viewHolder = (PlanetViewHolder) item.getTag();
+        DatatViewHolder viewHolder = (DatatViewHolder) item.getTag();
         viewHolder.getCheckBox().setChecked( planet.isChecked() );
       }
     });
@@ -60,17 +61,20 @@ public class QuestionMultiselection extends QuestionValue  {
     
     // Create and populate planets.
 //    planets = (Planet[]) contegetLastNonConfigurationInstance() ;
-    if ( planets == null ) {
-      planets = new Planet[] { 
-          new Planet("Mercury"), new Planet("Venus"), new Planet("Earth"), 
-          new Planet("Mars"), new Planet("Jupiter"), new Planet("Saturn"), 
-          new Planet("Uranus"), new Planet("Neptune"), new Planet("Ceres"),
-          new Planet("Pluto"), new Planet("Haumea"), new Planet("Makemake"),
-          new Planet("Eris")
-      };  
-    }
-    ArrayList<Planet> planetList = new ArrayList<Planet>();
-    planetList.addAll( Arrays.asList(planets) );
+//    if ( planets == null ) {
+    values = new Data[data.size()];
+      for(int i=0; i < data.size(); i++)
+    	  values[i] = data.get(i);
+      
+//          new Data("Mercury"), new Planet("Venus"), new Planet("Earth"), 
+//          new Data("Mars"), new Planet("Jupiter"), new Planet("Saturn"), 
+//          new Data("Uranus"), new Planet("Neptune"), new Planet("Ceres"),
+//          new Data("Pluto"), new Planet("Haumea"), new Planet("Makemake"),
+//          new Data("Eris")
+//      };  
+    
+    ArrayList<Data> planetList = new ArrayList<Data>();
+    planetList.addAll( Arrays.asList(values) );
     
     // Set our custom array adapter as the ListView's adapter.
     listAdapter = new PlanetArrayAdapter(context, planetList);
@@ -80,44 +84,13 @@ public class QuestionMultiselection extends QuestionValue  {
     return panel;
   }
   
-  /** Holds planet data. */
-  private static class Planet {
-    private String name = "" ;
-    private boolean checked = false ;
-    public Planet() {}
-    public Planet( String name ) {
-      this.name = name ;
-    }
-    public Planet( String name, boolean checked ) {
-      this.name = name ;
-      this.checked = checked ;
-    }
-    public String getName() {
-      return name;
-    }
-    public void setName(String name) {
-      this.name = name;
-    }
-    public boolean isChecked() {
-      return checked;
-    }
-    public void setChecked(boolean checked) {
-      this.checked = checked;
-    }
-    public String toString() {
-      return name ; 
-    }
-    public void toggleChecked() {
-      checked = !checked ;
-    }
-  }
   
   /** Holds child views for one row. */
-  private static class PlanetViewHolder {
+  private static class DatatViewHolder {
     private CheckBox checkBox ;
     private TextView textView ;
-    public PlanetViewHolder() {}
-    public PlanetViewHolder( TextView textView, CheckBox checkBox ) {
+    public DatatViewHolder() {}
+    public DatatViewHolder( TextView textView, CheckBox checkBox ) {
       this.checkBox = checkBox ;
       this.textView = textView ;
     }
@@ -136,11 +109,11 @@ public class QuestionMultiselection extends QuestionValue  {
   }
   
   /** Custom adapter for displaying an array of Planet objects. */
-  private static class PlanetArrayAdapter extends ArrayAdapter<Planet> {
+  private static class PlanetArrayAdapter extends ArrayAdapter<Data> {
     
     private LayoutInflater inflater;
     
-    public PlanetArrayAdapter( Context context, List<Planet> planetList ) {
+    public PlanetArrayAdapter( Context context, List<Data> planetList ) {
       super( context, R.layout.simplerow, R.id.rowTextView, planetList );
       // Cache the LayoutInflate to avoid asking for a new one each time.
       inflater = LayoutInflater.from(context) ;
@@ -149,7 +122,7 @@ public class QuestionMultiselection extends QuestionValue  {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
       // Planet to display
-      Planet planet = (Planet) this.getItem( position ); 
+    	Data planet = (Data) this.getItem( position ); 
 
       // The child views in each row.
       CheckBox checkBox ; 
@@ -165,13 +138,13 @@ public class QuestionMultiselection extends QuestionValue  {
         
         // Optimization: Tag the row with it's child views, so we don't have to 
         // call findViewById() later when we reuse the row.
-        convertView.setTag( new PlanetViewHolder(textView,checkBox) );
+        convertView.setTag( new DatatViewHolder(textView,checkBox) );
 
         // If CheckBox is toggled, update the planet it is tagged with.
         checkBox.setOnClickListener( new View.OnClickListener() {
           public void onClick(View v) {
             CheckBox cb = (CheckBox) v ;
-            Planet planet = (Planet) cb.getTag();
+            Data planet = (Data) cb.getTag();
             planet.setChecked( cb.isChecked() );
           }
         });        
@@ -179,25 +152,29 @@ public class QuestionMultiselection extends QuestionValue  {
       // Reuse existing row view
       else {
         // Because we use a ViewHolder, we avoid having to call findViewById().
-        PlanetViewHolder viewHolder = (PlanetViewHolder) convertView.getTag();
+    	  DatatViewHolder viewHolder = (DatatViewHolder) convertView.getTag();
         checkBox = viewHolder.getCheckBox() ;
         textView = viewHolder.getTextView() ;
       }
 
-      // Tag the CheckBox with the Planet it is displaying, so that we can
+      // Tag the CheckBox with the Data it is displaying, so that we can
       // access the planet in onClick() when the CheckBox is toggled.
       checkBox.setTag( planet ); 
       
       // Display planet data
       checkBox.setChecked( planet.isChecked() );
-      textView.setText( planet.getName() );      
+      textView.setText( planet.getLabel() );      
       
       return convertView;
     }
     
   }
-  
-  public Object onRetainNonConfigurationInstance() {
-    return planets ;
+
+  public Data[] getValues() {
+	return values;
+}
+
+public Object onRetainNonConfigurationInstance() {
+    return values ;
   }
 }

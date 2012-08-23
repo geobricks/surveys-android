@@ -194,7 +194,7 @@ public class Question extends Fragment {
 			break;
 		case MULTIPLE_CHOICE:
 			questionValue = new QuestionMultiselection(getActivity());
-			((QuestionMultiselection) questionValue).build();
+			((QuestionMultiselection) questionValue).build(qb.getQuestionChoices().getChoices());
 			break;
 
 		default: break;
