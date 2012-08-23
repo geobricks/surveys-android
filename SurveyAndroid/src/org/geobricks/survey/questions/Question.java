@@ -142,7 +142,6 @@ public class Question extends Fragment {
 //		panel.addView(uuid);
 //		uuid.setText(String.valueOf(UUID.randomUUID()));
 
-
 		panel.addView(createForm(qb));
 		// container.removeAllViews();
 

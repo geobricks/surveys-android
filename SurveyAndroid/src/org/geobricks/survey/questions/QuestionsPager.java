@@ -11,8 +11,12 @@ import org.geobricks.survey.utils.ParserUtils;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
+import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
 
 
 
@@ -33,7 +37,8 @@ public class QuestionsPager extends FragmentActivity {
 		@Override
 		protected void onCreate(Bundle savedInstanceState) {
 			super.onCreate(savedInstanceState);
-			setContentView(R.layout.viewpager);
+			setContentView(R.layout.viewpager2);
+//			setContentView(R.layout.viewpager);
 			//initialsie the pager
 			this.initialisePaging();
 		}
@@ -57,6 +62,15 @@ public class QuestionsPager extends FragmentActivity {
 			pager = (ViewPager) super.findViewById(R.id.viewpager);
 			pager.setAdapter(this.mPagerAdapter);
 			
+			DisplayMetrics displaymetrics = new DisplayMetrics();
+			getWindowManager().getDefaultDisplay().getMetrics(displaymetrics);
+			int height = displaymetrics.heightPixels;
+			int wwidth = displaymetrics.widthPixels;
+			
+			Log.i("SIZE", String.valueOf(height));
+			
+			
+			Toast.makeText(this, String.valueOf(height), Toast.LENGTH_LONG);
 
 		    nextButton = (Button) findViewById(R.id.next);
 		    nextButton.setId(R.string.next);
@@ -64,6 +78,8 @@ public class QuestionsPager extends FragmentActivity {
 		    backButton = (Button) findViewById(R.id.back);
 		    backButton.setOnClickListener(new ChangePageHandler());
 		    backButton.setId(R.string.back);
+		    
+		    
 		}
 		
 	    public class ChangePageHandler implements View.OnClickListener {
