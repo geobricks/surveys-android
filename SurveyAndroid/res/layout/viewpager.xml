@@ -1,37 +1,56 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    android:orientation="vertical" >
 
-    >
-	  <android.support.v4.view.ViewPager
-	  	android:id="@+android:id/viewpager"
-	  	android:layout_width="fill_parent"
-	 	android:layout_height="fill_parent"
-	  	/>
-	  
-	  <Button
-        android:id="@+id/back"
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|left"
-        android:drawableLeft="@drawable/onebit_29"
-        android:text="@string/back" />
-	  
-	  <Button
-        android:id="@+id/summary"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|center"
-        android:drawableLeft="@drawable/onebit_39"
-        android:text="@string/summary" />
+        android:layout_above="@+id/viewpager"
+        android:layout_alignParentTop="true"
+		android:background="#ffffff"
+        android:orientation="horizontal"
+	       android:paddingLeft="2dip"
+	       android:paddingTop="5dip"
+	       android:paddingRight="2dip"
+	       android:paddingBottom="5dip"
+       >
 
-    <Button
-        android:id="@+id/next"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|right"
-         android:drawableLeft="@drawable/onebit_27"
-        
-        android:text="@string/next" />
-</FrameLayout>
+        <Button
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|left"
+            android:drawableLeft="@drawable/ic_menu_back"
+             android:layout_alignParentLeft="true"
+            
+            />
+
+        <Button
+            android:id="@+id/summary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|center"
+       		 android:layout_centerInParent="true"
+            android:drawableLeft="@drawable/onebit_39"
+            android:text="@string/summary" />
+
+        <Button
+            android:id="@+id/next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|right"
+            android:drawablePadding="2dip"
+            android:drawableRight="@drawable/ic_menu_forward" 
+                         android:layout_alignParentRight="true"
+            
+            />
+    </RelativeLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

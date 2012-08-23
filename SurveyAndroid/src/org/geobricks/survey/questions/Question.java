@@ -8,6 +8,7 @@ import org.geobricks.survey.constants.QUESTIONTYPE;
 import org.geobricks.survey.questions.types.QuestionDate;
 import org.geobricks.survey.questions.types.QuestionEditText;
 import org.geobricks.survey.questions.types.QuestionListView;
+import org.geobricks.survey.questions.types.QuestionMultiselection;
 import org.geobricks.survey.questions.types.QuestionSpinner;
 import org.geobricks.survey.questions.types.QuestionValue;
 
@@ -37,7 +38,7 @@ public class Question extends Fragment {
 	
 	QuestionBean qb;
 	
-	ScrollView scrollView;
+//	ScrollView scrollView;
 	
 	ScrollView s;
 	
@@ -103,20 +104,28 @@ public class Question extends Fragment {
 			return null;
 		}
 
-		scrollView = new ScrollView(getActivity());
+//		ScrollView scrollView = new ScrollView(getActivity());
 		int padding = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 4, getActivity().getResources().getDisplayMetrics());
-		scrollView.setPadding(padding, padding, padding, padding);
-		LinearLayout panel = new LinearLayout(getActivity());
-		scrollView.addView(panel);
+//		scrollView.setPadding(padding, padding, padding, padding);
+		panel = new LinearLayout(getActivity());
+		
 		panel.setOrientation(LinearLayout.VERTICAL);
 		LinearLayout.LayoutParams llp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.FILL_PARENT,LinearLayout.LayoutParams.FILL_PARENT);
 		llp.setMargins(5, 5, 5, 5);
-		// scrollView.setLayoutParams(llp);
+		llp.weight = 1.0f;
+//		scrollView.setLayoutParams(llp);
+		panel.setLayoutParams(llp);
+		 
+//		scrollView.addView(panel);
 
 		panel.setBackgroundColor(Color.WHITE);
-		scrollView.setBackgroundColor(Color.WHITE);
+//		scrollView.setBackgroundColor(Color.WHITE);
 
-		LinearLayout h = new LinearLayout(getActivity());
+		LinearLayout h = new LinearLayout(getActivity());	
+		if( qb.getInfo() != null ) {
+			h.addView(addinfo(qb.getInfo()));
+		}
+		
 		h.setOrientation(LinearLayout.HORIZONTAL);
 		TextView t = new TextView(getActivity());
 		t.setPadding(padding, padding, padding, padding);
@@ -124,9 +133,7 @@ public class Question extends Fragment {
 		t.setTextAppearance(getActivity(), R.style.QuestionTitle);
 		t.setText(text);
 		
-		if( qb.getInfo() != null ) {
-			h.addView(addinfo(qb.getInfo()));
-		}
+
 		
 		panel.addView(h);
 		
@@ -140,12 +147,12 @@ public class Question extends Fragment {
 		// container.removeAllViews();
 
 		// return inflater.inflate(R.layout.question, container, false);
-		return scrollView;
+		return panel;
 	}
 	
 	private ImageView addinfo(String info) {
 		ImageView i = new ImageView(getActivity());
-		i.setImageResource(R.drawable.onebit_38);
+		i.setImageResource(R.drawable.ic_menu_info_details);
 		final AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 		builder.setMessage(Html.fromHtml(info)).setPositiveButton(R.string.ok, null);
 		i.setOnClickListener(new View.OnClickListener() {	
@@ -187,14 +194,14 @@ public class Question extends Fragment {
 			((QuestionSpinner) questionValue).build(null, qb.getQuestionChoices().getChoices());
 			break;
 		case MULTIPLE_CHOICE:
-			questionValue = new QuestionListView(getActivity());
-			((QuestionListView) questionValue).build(ListView.CHOICE_MODE_MULTIPLE, qb.getQuestionChoices().getChoices());
+			questionValue = new QuestionMultiselection(getActivity());
+			((QuestionMultiselection) questionValue).build();
 			break;
 
 		default: break;
 		}
 		try {
-			panel.addView(questionValue.getPanel());
+			panel.addView(questionValue.getPanel(), llp);
 		}catch(Exception e ){}
 		return panel;
 	}

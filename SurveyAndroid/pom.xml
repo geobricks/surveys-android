@@ -24,6 +24,11 @@
 			<artifactId>support-v4</artifactId>
 			<version>r6</version>
 		</dependency>
+		<dependency>
+		  <groupId>com.actionbarsherlock</groupId>
+		  <artifactId>library</artifactId>
+		  <version>4.0.0</version>
+		</dependency>
             
     </dependencies>
 
