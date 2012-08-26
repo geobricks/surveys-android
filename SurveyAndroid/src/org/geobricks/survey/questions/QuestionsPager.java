@@ -79,6 +79,8 @@ public class QuestionsPager extends FragmentActivity {
 					
 					Log.i("GetJson", url.getText().toString());
 //					String result = RESTUtils.getJsonById(view.getContext(), url.getText().toString());
+//					((QuestionsPager) view.getContext()).initialisePaging(result);
+
 					
 					LinearLayout urlpanel = (LinearLayout) findViewById(R.id.urlpanel);
 					urlpanel.removeAllViews();

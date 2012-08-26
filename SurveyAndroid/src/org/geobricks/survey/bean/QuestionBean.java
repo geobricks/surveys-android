@@ -14,7 +14,7 @@ public class QuestionBean {
 	
 	QUESTIONTYPE questionType;
 	
-	QuestionChoicesBean questionChoices = new QuestionChoicesBean();
+	AnswerChoicesBean answerChoicesBean = new AnswerChoicesBean();
 	
 	String result = "";
 
@@ -42,14 +42,7 @@ public class QuestionBean {
 		this.questionType = questionType;
 	}
 
-	public QuestionChoicesBean getQuestionChoices() {
-		return questionChoices;
-	}
-
-	public void setQuestionChoices(QuestionChoicesBean questionChoices) {
-		this.questionChoices = questionChoices;
-	}
-
+	
 	public String getTitle() {
 		return title;
 	}
@@ -73,6 +66,15 @@ public class QuestionBean {
 	public void setInfo(String info) {
 		this.info = info;
 	}
+
+	public AnswerChoicesBean getAnswerChoicesBean() {
+		return answerChoicesBean;
+	}
+
+	public void setAnswerChoicesBean(AnswerChoicesBean answerChoicesBean) {
+		this.answerChoicesBean = answerChoicesBean;
+	}
+	
 	
 	
 	

@@ -190,11 +190,11 @@ public class Question extends Fragment {
 				break;
 			case SINGLE_CHOICE:
 				questionValue = new QuestionSpinner(getActivity());
-				((QuestionSpinner) questionValue).build(null, qb.getQuestionChoices().getChoices());
+				((QuestionSpinner) questionValue).build(null, qb.getAnswerChoicesBean().getChoices());
 				break;
 			case MULTIPLE_CHOICE:
 				questionValue = new QuestionMultiselection(getActivity());
-				((QuestionMultiselection) questionValue).build(qb.getQuestionChoices().getChoices());
+				((QuestionMultiselection) questionValue).build(qb.getAnswerChoicesBean().getChoices());
 				break;
 	
 			default: break;

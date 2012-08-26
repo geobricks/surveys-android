@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.geobricks.survey.utils.Data;
 
-public class QuestionChoicesBean {
+public class AnswerChoicesBean {
 	
 	List<Data> choices;
 
