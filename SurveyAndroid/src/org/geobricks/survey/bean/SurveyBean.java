@@ -12,6 +12,10 @@ public class SurveyBean {
 	String name;	
 	String survey_abstract;
 	
+	String date_creation;
+	
+	String date_last_update;
+	
 	List<QuestionBean> questions;
 
 	public SURVEYTYPE getSurveyType() {

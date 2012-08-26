@@ -13,6 +13,8 @@ public class CONSTANTS {
 
 	
 	public static String LOCALE = "en";
+	
+	public static String QUESTIONS_LANGUAGE = "en";
 
 
 }

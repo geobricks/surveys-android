@@ -23,7 +23,7 @@ import android.util.Log;
 
 public class ParserUtils {
 	
-	public static SurveyBean parseJSON(Context context, String json, String language) {
+	public static SurveyBean parseJSON(Context context, String json) {
 		 SurveyBean surveyBean = new SurveyBean();		 
 		 try {
 			JSONObject object = (JSONObject) new JSONTokener(json).nextValue();
@@ -34,7 +34,7 @@ public class ParserUtils {
 				String value = object.getString(key);
 				map.put(key, value);
 			}		 
-			surveyBean = parseSurvey(map, language);
+			surveyBean = parseSurvey(map);
 		
 		 } catch (JSONException e) {Log.e("JSON", e.getMessage());}
 		 return surveyBean;
@@ -46,8 +46,20 @@ public class ParserUtils {
 		return k;
 	}
 	
-	private static SurveyBean parseSurvey(Map<String, String> map, String language) {
+	private static SurveyBean parseSurvey(Map<String, String> map) {
 		SurveyBean surveyBean = new SurveyBean();
+		
+		String language = CONSTANTS.QUESTIONS_LANGUAGE;
+		//theere are the no language based fields
+		for(String key : map.keySet()) {
+			try {
+				SURVEYINFO c = SURVEYINFO.valueOf(key.toUpperCase());
+				switch (c) {
+					case MODEL_DEFAULT_LANGUAGE: language = map.get(key).toLowerCase(); break;
+					default: break;
+				}
+			}catch(Exception e) {}
+		}
 		
 		//theere are the no language based fields
 		for(String key : map.keySet()) {
@@ -112,8 +124,8 @@ public class ParserUtils {
 				Log.i("JSON", c.toString() + " | " + key.toUpperCase());
 				switch (c) {
 					case QUESTION_NUMBER: question.setNumber(map.get(key)); break;
-					case QUESTION_TYPE: Log.i("JSON", map.get(key).toUpperCase()); question.setQuestionType(QUESTIONTYPE.valueOf(map.get(key).toUpperCase())); break;
-					case QUESTION_CHOICES: question.getQuestionChoices().setChoices(getQuestionChoices(map.get(key),language)); break;
+					case ANSWER_TYPE: Log.i("JSON", map.get(key).toUpperCase()); question.setQuestionType(QUESTIONTYPE.valueOf(map.get(key).toUpperCase())); break;
+					case ANSWER_CHOICES: question.getQuestionChoices().setChoices(getQuestionChoices(map.get(key),language)); break;
 					default: break;
 			}
 			}catch(Exception e ) {}

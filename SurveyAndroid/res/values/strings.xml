@@ -7,6 +7,10 @@
     <string name="next">Next</string>
     <string name="back">Back</string>
     <string name="summary">Summary</string>
-     <string name="ok">ok</string>
+    <string name="ok">ok</string>
+    <string name="load_survey">Load Survey</string>
+    <string name="search">Search</string>
+    <string name="settings">Settings</string>
+    
 
 </resources>

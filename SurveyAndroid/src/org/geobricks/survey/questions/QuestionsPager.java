@@ -96,7 +96,7 @@ public class QuestionsPager extends FragmentActivity {
 		private void initialisePaging(String json) {
 
 			List<Question> fragments = new Vector<Question>();
-			SurveyBean surveyBean = ParserUtils.parseJSON(this, json, CONSTANTS.LOCALE);
+			SurveyBean surveyBean = ParserUtils.parseJSON(this, json);
 			
 			int i = 1;
 			for(QuestionBean question : surveyBean.getQuestions()) {
