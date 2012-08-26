@@ -1,8 +1,9 @@
 package org.geobricks.survey.utils;
 
 import java.util.ArrayList;
-import java.util.HashMap;
+
 import java.util.Iterator;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -22,40 +23,65 @@ import android.util.Log;
 
 public class ParserUtils {
 	
-	public static SurveyBean parseJSON(Context context, int resource) {
-		 String json = Utils.readFile(context, resource);
+	public static SurveyBean parseJSON(Context context, String json, String language) {
 		 SurveyBean surveyBean = new SurveyBean();		 
 		 try {
 			JSONObject object = (JSONObject) new JSONTokener(json).nextValue();
-			Map<String, String> map = new HashMap<String, String>();
+			LinkedHashMap<String, String> map = new LinkedHashMap<String, String>();
 			Iterator iter = object.keys();
 			while (iter.hasNext()) {
 				String key = (String) iter.next();
 				String value = object.getString(key);
 				map.put(key, value);
 			}		 
-			surveyBean = parseSurvey(map);
+			surveyBean = parseSurvey(map, language);
 		
 		 } catch (JSONException e) {Log.e("JSON", e.getMessage());}
 		 return surveyBean;
 	}
 
-	private static SurveyBean parseSurvey(Map<String, String> map) {
+	private static String cutKey(String key) {
+		String k = key;
+		k = key.substring(key.indexOf("_") + 1);
+		return k;
+	}
+	
+	private static SurveyBean parseSurvey(Map<String, String> map, String language) {
 		SurveyBean surveyBean = new SurveyBean();
+		
+		//theere are the no language based fields
 		for(String key : map.keySet()) {
-			SURVEYINFO c = SURVEYINFO.valueOf(key.toUpperCase());
-			switch (c) {
-				case SURVEY_ID: surveyBean.setId(map.get(key)); break;
-				case SURVEY_NAME: surveyBean.setName(map.get(key)); break;
-				case SURVEY_ABSTRACT: surveyBean.setSurvey_abstract(map.get(key)); break;
-				case SURVEY_QUESTIONS: surveyBean.setQuestions(parseQuestions(map.get(key))); break;
-				default: break;
-			}
+			try {
+				SURVEYINFO c = SURVEYINFO.valueOf(key.toUpperCase());
+				switch (c) {
+					case ID: surveyBean.setId(map.get(key)); break;
+					case MODEL_QUESTIONS: surveyBean.setQuestions(parseQuestions(map.get(key), language)); break;
+					default: break;
+				}
+			}catch(Exception e) {}
+		}
+		
+		//these are the language based fields
+		for(String key : map.keySet()) {
+			Log.i("KEY: ", key);
+			String cutkey = cutKey(key);
+			Log.i("cutkey: ", cutkey);
+			try {
+				SURVEYINFO c = SURVEYINFO.valueOf(cutkey.toUpperCase());
+	
+				String keylanguage = language + "_"+ cutkey;
+				Log.i("k: ", keylanguage);
+				switch (c) {
+					case NAME: surveyBean.setName(map.get(keylanguage)); break;
+					case ABSTRACT: surveyBean.setSurvey_abstract(map.get(keylanguage)); break;
+					default: break;
+				}
+			}catch(Exception e) {}
 		}
 		return surveyBean;
 	}
 	
-	private static List<QuestionBean> parseQuestions(String survey_questions) {
+	private static List<QuestionBean> parseQuestions(String survey_questions, String language) {
 		List<QuestionBean> questions = new ArrayList<QuestionBean>();
 		Log.i("JSON",  survey_questions);
 		 try {
@@ -65,33 +91,46 @@ public class ParserUtils {
 					Log.i("JSON", "!" + i + " | " + array.get(i));
 					Log.i("JSON", "!!" + i + " | " + object);
 					Iterator iter = object.keys();
-					Map<String, String> map = new HashMap<String, String>();
+					LinkedHashMap<String, String> map = new LinkedHashMap<String, String>();
 					while (iter.hasNext()) {
 						String key = (String) iter.next();
 						String value = object.getString(key);
 						map.put(key, value);
 					}
 					Log.i("JSON", "---->" + i + " | " + map);
-					questions.add(parseQuestion(map));
+					questions.add(parseQuestion(map, language));
 				}
 			 } catch (JSONException e) {Log.e("JSON", e.getMessage());}
 		return questions;
 	}
 	
-	private static QuestionBean parseQuestion(Map<String, String> map) throws JSONException {
+	private static QuestionBean parseQuestion(Map<String, String> map, String language) throws JSONException {
 		QuestionBean question = new QuestionBean();
 		for(String key : map.keySet()) {
-			QUESTIONINFO c = QUESTIONINFO.valueOf(key.toUpperCase());
-			Log.i("JSON", c.toString() + " | " + key.toUpperCase());
-			switch (c) {
-				case QUESTION_TITLE: question.setTitle(map.get(key)); break;
-				case QUESTION_NUMBER: question.setNumber(map.get(key)); break;
-				case QUESTION_INFO: question.setInfo(map.get(key)); break;
-				case QUESTION_TEXT: question.setText(getText(map.get(key), CONSTANTS.LOCALE)); break;
-				case QUESTION_TYPE: Log.i("JSON", map.get(key).toUpperCase()); question.setQuestionType(QUESTIONTYPE.valueOf(map.get(key).toUpperCase())); break;
-				case QUESTION_CHOICES: question.getQuestionChoices().setChoices(getQuestionChoices(map.get(key), CONSTANTS.LOCALE)); break;
-				default: break;
+			try {
+				QUESTIONINFO c = QUESTIONINFO.valueOf(key.toUpperCase());
+				Log.i("JSON", c.toString() + " | " + key.toUpperCase());
+				switch (c) {
+					case QUESTION_NUMBER: question.setNumber(map.get(key)); break;
+					case QUESTION_TYPE: Log.i("JSON", map.get(key).toUpperCase()); question.setQuestionType(QUESTIONTYPE.valueOf(map.get(key).toUpperCase())); break;
+					case QUESTION_CHOICES: question.getQuestionChoices().setChoices(getQuestionChoices(map.get(key),language)); break;
+					default: break;
 			}
+			}catch(Exception e ) {}
+		}
+		
+		for(String key : map.keySet()) {
+			String cutkey = cutKey(key);
+			String keylanguage = language + "_"+ cutkey;
+			try {
+				QUESTIONINFO c = QUESTIONINFO.valueOf(cutkey.toUpperCase());
+				Log.i("JSON", c.toString() + " | " + key.toUpperCase());
+				switch (c) {
+					case INFO: question.setInfo(map.get(keylanguage)); break;
+					case TEXT: question.setText(map.get(keylanguage)); break;
+					default: break;
+			}
+			}catch(Exception e ) {}
 		}
 
 		return question;
@@ -106,7 +145,7 @@ public class ParserUtils {
 					JSONObject object = (JSONObject) array.get(i);
 					Log.i("JSON", "!" + i + " | " + array.get(i));
 					Iterator iter = object.keys();
-					Map<String, String> map = new HashMap<String, String>();
+					LinkedHashMap<String, String> map = new LinkedHashMap<String, String>();
 					while (iter.hasNext()) {
 						String key = (String) iter.next();
 						if ( key.toLowerCase().equals(language)) {

@@ -172,32 +172,32 @@ public class Question extends Fragment {
 		LinearLayout.LayoutParams llp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.FILL_PARENT,LinearLayout.LayoutParams.FILL_PARENT);
 		llp.setMargins(5, 5, 5, 5);
 		switch (qb.getQuestionType()) {
-		case SINGLE_VALUE_NUMBER:
-			questionValue = new QuestionEditText(getActivity());
-			((QuestionEditText) questionValue).build(InputType.TYPE_CLASS_NUMBER);
-			break;
-		case SINGLE_VALUE_TEXT:
-			questionValue = new QuestionEditText(getActivity());
-			((QuestionEditText) questionValue).build(null);
-			break;
-		case FREE_TEXT:
-			questionValue = new QuestionEditText(getActivity());
-			((QuestionEditText) questionValue).build(null);
-			break;
-		case SINGLE_VALUE_DATE:
-			questionValue = new QuestionDate(getActivity());
-			((QuestionDate) questionValue).build();
-			break;
-		case SINGLE_CHOICE:
-			questionValue = new QuestionSpinner(getActivity());
-			((QuestionSpinner) questionValue).build(null, qb.getQuestionChoices().getChoices());
-			break;
-		case MULTIPLE_CHOICE:
-			questionValue = new QuestionMultiselection(getActivity());
-			((QuestionMultiselection) questionValue).build(qb.getQuestionChoices().getChoices());
-			break;
-
-		default: break;
+			case SINGLE_VALUE_NUMBER:
+				questionValue = new QuestionEditText(getActivity());
+				((QuestionEditText) questionValue).build(InputType.TYPE_CLASS_NUMBER);
+				break;
+			case SINGLE_VALUE_TEXT:
+				questionValue = new QuestionEditText(getActivity());
+				((QuestionEditText) questionValue).build(null);
+				break;
+			case FREE_TEXT:
+				questionValue = new QuestionEditText(getActivity());
+				((QuestionEditText) questionValue).build(null);
+				break;
+			case SINGLE_VALUE_DATE:
+				questionValue = new QuestionDate(getActivity());
+				((QuestionDate) questionValue).build();
+				break;
+			case SINGLE_CHOICE:
+				questionValue = new QuestionSpinner(getActivity());
+				((QuestionSpinner) questionValue).build(null, qb.getQuestionChoices().getChoices());
+				break;
+			case MULTIPLE_CHOICE:
+				questionValue = new QuestionMultiselection(getActivity());
+				((QuestionMultiselection) questionValue).build(qb.getQuestionChoices().getChoices());
+				break;
+	
+			default: break;
 		}
 		try {
 			panel.addView(questionValue.getPanel(), llp);
