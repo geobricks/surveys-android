@@ -1,0 +1,44 @@
+{
+	"_id" : "12345678",
+	"en_name" : "Public Health Care in the Philippines",
+	"en_abstract" : "Chicken chicken chicken",
+	"it_name" : "Sanità Pubblica nelle Filippine",
+	"it_abstract" : "Pollo pollo pollo",
+    "model_creation_date": "2012-08-26T14:05:30.387Z",
+    "model_date_last_update": "2012-08-26T14:05:30.387Z",
+    "model_default_language": "en",
+	"model_questions" : [
+		{
+			"question_number" : "1",
+			"en_info" : "chicken chicken chicken chicken <b>chickcen</b> chicken",
+			"it_info" : "pollo pollo pollo",
+			"en_text" : "Chicken?",
+			"it_text" : "Pollo?",
+			"question_type" : "single_value_date"
+		},
+		{
+			"question_number" : "2",
+			"en_info" : "2 chicken chicken chicken chicken <b>chickcen</b> chicken",
+			"it_info" : "pollo pollo pollo",
+			"en_text" : "Chicken?",
+			"it_text" : "Pollo?",
+			"question_type" : "free_text"
+		},
+		{
+			"question_number" : "3",
+			"en_info" : "chicken chicken chicken chicken <b>chickcen</b> chicken",
+			"it_info" : "pollo pollo pollo",
+			"en_text" : "Chicken?",
+			"it_text" : "Pollo?",
+			"question_type" : "single_choice",
+			"question_choices" : [ 
+					{
+						"en" : [ 
+								{"1" : "chicken 1", "2": "chicken 2", "3": "chicken 3" }
+							]					
+					}
+			]
+		}
+		
+	]
+}
