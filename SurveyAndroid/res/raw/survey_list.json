@@ -1,0 +1,28 @@
+[
+    {
+        "_id": "503a5559e8fc8d384400000d",
+        "en_abstract": "And this is its description",
+        "en_name": "This is just a test",
+        "model_creation_date": "2012-08-26T16:56:57.238Z",
+        "model_date_last_update": "2012-08-26T16:56:57.238Z",
+        "model_default_language": "en",
+        "model_questions": [
+            {
+                "answer_type": "single_value_text",
+                "question_number": "1",
+                "en_text": "What's your name?",
+                "en_info": "People use it to call you",
+                "it_text": "Come ti chiami?",
+                "it_info": "La gente usa il tuo nome per chiamarti"
+            },
+            {
+                "answer_type": "single_value_number",
+                "question_number": "2",
+                "en_text": "How old are you?",
+                "en_info": "Milliseconds since Jan 1st 1970",
+                "it_text": "Quanti anni hai?",
+                "it_info": "Millisecondi dal 1 Gen 1970"
+            }
+        ]
+    }
+]
