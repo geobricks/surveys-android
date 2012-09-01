@@ -14,6 +14,9 @@ public class Data  implements Serializable {
 	String label;
 
 	boolean checked = false;
+	
+	public Data() {
+	}
 
 	public Data(String code, String label) {
 		this.code = code;

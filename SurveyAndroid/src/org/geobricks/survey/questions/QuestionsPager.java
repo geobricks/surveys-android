@@ -69,8 +69,11 @@ public class QuestionsPager extends FragmentActivity {
 			Log.i("t", surveyBean.getName());
 			
 			// working
-//			setContentView(R.layout.viewpager2);
-			setContentView(R.layout.viewpager_withedittext);
+			setContentView(R.layout.viewpager2);
+			
+		    initialisePaging();
+
+//			setContentView(R.layout.viewpager_withedittext);
 
 			
 //			setContentView(R.layout.viewpager3);
@@ -78,15 +81,12 @@ public class QuestionsPager extends FragmentActivity {
 			//initialsie the pager
 //			this.initialisePaging(json);
 			
-		    Button ok = (Button) findViewById(R.id.getjson);
-		    ok.setOnClickListener(new GetJson());
+//		    Button ok = (Button) findViewById(R.id.getjson);
+//		    ok.setOnClickListener(new GetJson());
 //		    ok.setId(id)
 		    
-		    url = (EditText) findViewById(R.id.url);		    
-		    url.setText(CONSTANTS.SURVEY_WEBSERVICE_URL + CONSTANTS.SURVEY_WEBSERVICE_SELECT_MODEL + "/");
-		    
-		    
-		    
+//		    url = (EditText) findViewById(R.id.url);		    
+//		    url.setText(CONSTANTS.SURVEY_WEBSERVICE_URL + CONSTANTS.SURVEY_WEBSERVICE_SELECT_MODEL + "/");
 		    
 //			String json = Utils.readFile(this, R.raw.survey_new);
 //			 ParserUtils.parseJSON(this, json, CONSTANTS.LOCALE);
@@ -111,7 +111,7 @@ public class QuestionsPager extends FragmentActivity {
 					
 					
 					String json = Utils.readFile(view.getContext(), R.raw.survey_new);
-					((QuestionsPager) view.getContext()).initialisePaging(json);
+					((QuestionsPager) view.getContext()).initialisePaging();
 				}
 			}
 
@@ -119,7 +119,7 @@ public class QuestionsPager extends FragmentActivity {
 		/**
 		 * Initialise the fragments to be paged
 		 */
-		private void initialisePaging(String json) {
+		private void initialisePaging() {
 
 			List<Question> fragments = new Vector<Question>();
 //			SurveyBean surveyBean = ParserUtils.parseJSON(this, json);

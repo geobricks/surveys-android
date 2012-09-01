@@ -2,7 +2,7 @@ package org.geobricks.survey.bean;
 
 import java.io.Serializable;
 
-import org.geobricks.survey.constants.QUESTIONTYPE;
+import org.geobricks.survey.constants.ANSWERTYPE;
 
 public class QuestionBean implements Serializable {
 	
@@ -19,7 +19,7 @@ public class QuestionBean implements Serializable {
 	
 	String text;
 	
-	QUESTIONTYPE questionType;
+	ANSWERTYPE type;
 	
 	AnswerChoicesBean answerChoicesBean = new AnswerChoicesBean();
 	
@@ -41,15 +41,17 @@ public class QuestionBean implements Serializable {
 		this.text = text;
 	}
 
-	public QUESTIONTYPE getQuestionType() {
-		return questionType;
-	}
-
-	public void setQuestionType(QUESTIONTYPE questionType) {
-		this.questionType = questionType;
-	}
+	
 
 	
+	public ANSWERTYPE getType() {
+		return type;
+	}
+
+	public void setType(ANSWERTYPE type) {
+		this.type = type;
+	}
+
 	public String getTitle() {
 		return title;
 	}

@@ -29,7 +29,7 @@ public class SurveysListviewActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.listview);
         
-		String json = Utils.readFile(this, R.raw.survey_list);
+		String json = Utils.readFile(this, R.raw.survey_list_2);
 		List<SurveyBean> surveys = ParserUtils.parseJSONSurveysList(this, json);
         
         SurveyListModel data[] = new SurveyListModel[surveys.size()];

@@ -9,9 +9,9 @@ import java.util.Map;
 
 import org.geobricks.survey.bean.QuestionBean;
 import org.geobricks.survey.bean.SurveyBean;
+import org.geobricks.survey.constants.ANSWERTYPE;
 import org.geobricks.survey.constants.CONSTANTS;
 import org.geobricks.survey.constants.QUESTIONINFO;
-import org.geobricks.survey.constants.QUESTIONTYPE;
 import org.geobricks.survey.constants.SURVEYINFO;
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -79,7 +79,7 @@ public class ParserUtils {
 		SurveyBean surveyBean = new SurveyBean();
 		
 		String language = CONSTANTS.QUESTIONS_LANGUAGE;
-		//theere are the no language based fields
+		//these are the no language based fields
 		for(String key : map.keySet()) {
 			try {
 				SURVEYINFO c = SURVEYINFO.valueOf(key.toUpperCase());
@@ -90,7 +90,7 @@ public class ParserUtils {
 			}catch(Exception e) {}
 		}
 		
-		//theere are the no language based fields
+		//these are the no language based fields
 		for(String key : map.keySet()) {
 			try {
 				SURVEYINFO c = SURVEYINFO.valueOf(key.toUpperCase());
@@ -153,8 +153,8 @@ public class ParserUtils {
 				Log.i("JSON", c.toString() + " | " + key.toUpperCase());
 				switch (c) {
 					case QUESTION_NUMBER: question.setNumber(map.get(key)); break;
-					case ANSWER_TYPE: Log.i("JSON", map.get(key).toUpperCase()); question.setQuestionType(QUESTIONTYPE.valueOf(map.get(key).toUpperCase())); break;
-					case ANSWER_CHOICES: question.getAnswerChoicesBean().setChoices(getQuestionChoices(map.get(key), language)); break;
+					case ANSWER_TYPE: Log.i("JSON", map.get(key).toUpperCase()); question.setType(ANSWERTYPE.valueOf(map.get(key).toUpperCase())); break;
+					case CHOICES: question.getAnswerChoicesBean().setChoices(getChoices(map.get(key), language)); break;
 					default: break;
 			}
 			}catch(Exception e ) {}
@@ -199,22 +199,47 @@ public class ParserUtils {
 		return s;
 	}
 	
-	private static List<Data> getQuestionChoices(String json, String language) {
+	private static List<Data> getChoices(String json, String language) {
 		List<Data> data = new ArrayList<Data>();
-		Log.i("QUESTION CHOICES ", json);
-		String getJson = getText(json, language);
-		Log.i("QUESTION CHOICES s ", getJson);
+		Log.i("CHOICES ", json);
+//		String getJson = getText(json, language);
+//		Log.i("CHOICES s ", getJson);
 		 try {
-			 JSONArray array = (JSONArray) new JSONTokener(getJson).nextValue();
+			 JSONArray array = (JSONArray) new JSONTokener(json).nextValue();
 			 for(int i=0; i <  array.length(); i++) {
 				JSONObject object = (JSONObject) array.get(i);
-				Log.i("JSON", "!" + i + " | " + array.get(i));
+				Log.i("CHOICES", "CHOICE: " + i + ") | " + array.get(i));
 				Iterator iter = object.keys();
+				LinkedHashMap<String, String> map = new LinkedHashMap<String, String>();
 				while (iter.hasNext()) {
+				
 					String key = (String) iter.next();
 					String value = object.getString(key);
-					data.add(new Data(key, value));
+					map.put(key, value);
+//					data.add(new Data(key, value));
 				}
+				Log.i("CHOICES", "MAP: " + i + ") | " + map);
+				// TODO: GET CODE LABEL
+				//these are the language based fields
+				Data d = new Data();
+				for(String key : map.keySet()) {
+					Log.i("KEY: ", key);
+					String cutkey = cutKey(key);
+					Log.i("cutkey: ", cutkey);
+					try {
+						QUESTIONINFO c = QUESTIONINFO.valueOf(cutkey.toUpperCase());
+						String keylanguage = language + "_"+ cutkey;
+						Log.i("k: ", keylanguage);
+						switch (c) {
+							case CHOICE_CODE: d.setCode(map.get(key)); break;
+							case CHOICE_LABEL: d.setLabel(map.get(keylanguage)); break;
+							default: break;
+						}
+					}catch(Exception e) {}			
+				}
+				Log.i("DATa",d.getLabel());
+				data.add(d);
+				
 			}
 		} catch (JSONException e) {Log.e("JSON", e.getMessage());}
 		return data;
