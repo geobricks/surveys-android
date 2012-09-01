@@ -22,14 +22,15 @@ import android.widget.ListView;
 
 public class SurveysListviewActivity extends Activity {
 
-    private ListView listView1;
+    private ListView listView;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.listview);
         
-		String json = Utils.readFile(this, R.raw.survey_list_2);
+        // TODO: should be read dinamically somewhere (DB or webservice)
+		String json = Utils.readFile(this, R.raw.survey_list_large);
 		List<SurveyBean> surveys = ParserUtils.parseJSONSurveysList(this, json);
         
         SurveyListModel data[] = new SurveyListModel[surveys.size()];
@@ -37,47 +38,22 @@ public class SurveysListviewActivity extends Activity {
         for(int i=0; i < surveys.size(); i++) {
         	data[i] = new SurveyListModel(R.drawable.arrow_right, surveys.get(i));
         }
-        
+       
         SurveyListAdapter adapter = new SurveyListAdapter(this, R.layout.listview_list_item_row, data);
         
-        
-        listView1 = (ListView)findViewById(R.id.listView1);
-         
+        listView = (ListView)findViewById(R.id.listView1);
         View header = (View)getLayoutInflater().inflate(R.layout.listview_header_row, null);
-        listView1.addHeaderView(header);
-        
-        listView1.setAdapter(adapter);
-        
-        listView1.setOnItemClickListener(new OnItemClickListener() {
-
+        listView.addHeaderView(header);
+        listView.setAdapter(adapter);
+        listView.setOnItemClickListener(new OnItemClickListener() {
 			@Override
 			public void onItemClick(AdapterView<?> adapter, View view, int pos, long id) {
-				
 				SurveyListModel model = (SurveyListModel) adapter.getItemAtPosition(pos);
-				Log.i("MODEL", model.surveyBean.getName());
-				
-//
-//				   QuestionsPager qp = QuestionsPager.newInstance(model.surveyBean);
-//				   Intent i = new Intent().setClass(view.getContext(), qp.getClass());
-				
-				
-//SurveyBeanSerializable a = new SurveyBeanSerializable();
-				SurveyBean a = new SurveyBean();
-a.setName("name");
-				   Intent i = new Intent().setClass(view.getContext(), QuestionsPager.class);
-//				   i.putExtra("test", model.surveyBean); 
-				   i.putExtra("test", "test333");
-				   i.putExtra("bean", model.surveyBean);
-
-
-
-
-//				   qp.getIntent().setFlags(Intent.FLAG_ACTIVITY_MULTIPLE_TASK);
-//				   qp.getIntent().setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                   
-                   view.getContext().startActivity(i);
+				Intent i = new Intent().setClass(view.getContext(), QuestionsPager.class);
+				// passing survey bean to questionPager
+				i.putExtra("bean", model.surveyBean);
+				view.getContext().startActivity(i);
 			}
-        	
 		});
     }
 }

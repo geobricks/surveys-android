@@ -1,18 +1,15 @@
 package org.geobricks.survey.questions;
 
-import java.util.UUID;
-
 import org.geobricks.survey.R;
 import org.geobricks.survey.bean.QuestionBean;
+import org.geobricks.survey.questions.types.QuestionBoolean;
 import org.geobricks.survey.questions.types.QuestionDate;
 import org.geobricks.survey.questions.types.QuestionEditText;
-import org.geobricks.survey.questions.types.QuestionListView;
 import org.geobricks.survey.questions.types.QuestionMultiselection;
 import org.geobricks.survey.questions.types.QuestionSpinner;
 import org.geobricks.survey.questions.types.QuestionValue;
 
 import android.app.AlertDialog;
-import android.app.Dialog;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -23,14 +20,9 @@ import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ListView;
 import android.widget.ScrollView;
-import android.widget.Spinner;
 import android.widget.TextView;
 
 public class Question extends Fragment {
@@ -190,8 +182,8 @@ public class Question extends Fragment {
 					((QuestionDate) questionValue).build();
 					break;
 				case SINGLE_VALUE_BOOLEAN:
-					questionValue = new QuestionDate(getActivity());
-					((QuestionDate) questionValue).build();
+					questionValue = new QuestionBoolean(getActivity());
+					((QuestionBoolean) questionValue).build();
 					break;
 				case SINGLE_CHOICE:
 					questionValue = new QuestionSpinner(getActivity());
