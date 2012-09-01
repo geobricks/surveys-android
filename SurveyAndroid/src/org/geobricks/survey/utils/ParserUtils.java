@@ -23,6 +23,35 @@ import android.util.Log;
 
 public class ParserUtils {
 	
+	public static List<SurveyBean> parseJSONSurveysList(Context context, String json) {
+		List<SurveyBean> surveysBean = new ArrayList<SurveyBean>();
+		 try {
+			 JSONArray array = (JSONArray) new JSONTokener(json).nextValue();
+				for(int i=0; i <  array.length(); i++) {
+					JSONObject object = (JSONObject) array.get(i);
+					surveysBean.add(parseJSON(context, object));
+				}
+		 } catch (JSONException e) {Log.e("JSON", e.getMessage());}
+		 return surveysBean;
+	}
+	
+	public static SurveyBean parseJSON(Context context, JSONObject object) {
+		 SurveyBean surveyBean = new SurveyBean();		 
+		 try {
+			LinkedHashMap<String, String> map = new LinkedHashMap<String, String>();
+			Iterator iter = object.keys();
+			while (iter.hasNext()) {
+				String key = (String) iter.next();
+				String value = object.getString(key);
+				map.put(key, value);
+			}		 
+			surveyBean = parseSurvey(map);
+		
+		 } catch (JSONException e) {Log.e("JSON", e.getMessage());}
+		 return surveyBean;
+	}
+	
+	
 	public static SurveyBean parseJSON(Context context, String json) {
 		 SurveyBean surveyBean = new SurveyBean();		 
 		 try {

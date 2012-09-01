@@ -1,27 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" 
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#FFFFFF"> 
+    
+     <ListView
+        android:id="@+id/listView1"
         android:layout_width="fill_parent"
-        android:layout_height="60dip"
-        android:padding="5dip">
-
-
-
-        <TextView
-                android:text="Nome"
-                android:layout_marginLeft="5dip"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:id="@+id/personName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"></TextView>
-        <TextView
-                android:text="Cognome"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="#6b71f1"
-                android:id="@+id/personSurname"
-                android:layout_alignLeft="@+id/personName"
-                android:layout_alignParentBottom="true"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-        </TextView>
-</RelativeLayout>
+        android:layout_height="fill_parent" />
+     
+</LinearLayout>

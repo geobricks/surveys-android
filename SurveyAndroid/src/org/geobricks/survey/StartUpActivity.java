@@ -1,6 +1,6 @@
 package org.geobricks.survey;
 
-import org.geobricks.survey.questions.QuestionsPager;
+import org.geobricks.survey.surveyslist.SurveysListviewActivity;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -13,7 +13,6 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.GridView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class StartUpActivity extends Activity {
 	 
@@ -58,7 +57,10 @@ public class StartUpActivity extends Activity {
 					
 				   //Toast.makeText(getApplicationContext(),
 					//((TextView) v).getText(), Toast.LENGTH_SHORT).show();
-					Intent intent = new Intent().setClass(v.getContext(), QuestionsPager.class);
+//					Intent intent = new Intent().setClass(v.getContext(), QuestionsPager.class);
+//			        v.getContext().startActivity(intent);
+			        
+					Intent intent = new Intent().setClass(v.getContext(), SurveysListviewActivity.class);
 			        v.getContext().startActivity(intent);
 				}
 			});
