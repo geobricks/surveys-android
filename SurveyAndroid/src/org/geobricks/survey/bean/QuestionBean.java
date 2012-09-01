@@ -1,9 +1,16 @@
 package org.geobricks.survey.bean;
 
+import java.io.Serializable;
+
 import org.geobricks.survey.constants.QUESTIONTYPE;
 
-public class QuestionBean {
+public class QuestionBean implements Serializable {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	String title;
 	
 	String number;

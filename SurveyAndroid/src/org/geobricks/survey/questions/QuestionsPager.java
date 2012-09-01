@@ -6,9 +6,8 @@ import java.util.Vector;
 import org.geobricks.survey.R;
 import org.geobricks.survey.bean.QuestionBean;
 import org.geobricks.survey.bean.SurveyBean;
+import org.geobricks.survey.bean.SurveyBeanSerializable;
 import org.geobricks.survey.constants.CONSTANTS;
-import org.geobricks.survey.utils.ParserUtils;
-import org.geobricks.survey.utils.RESTUtils;
 import org.geobricks.survey.utils.Utils;
 
 import android.os.Bundle;
@@ -33,19 +32,41 @@ public class QuestionsPager extends FragmentActivity {
 		
 		Button backButton;
 
-
+		SurveyBean surveyBean;
 		
 		EditText url;
 		
-
 		/** maintains the pager adapter*/
 		private QuestionsPagerAdapter mPagerAdapter;
+		
+		public static QuestionsPager newInstance(SurveyBean bean) {
+			QuestionsPager f = new QuestionsPager();
+			f.setSurveyBean(bean);
+	        return f;
+		}
+
+		public SurveyBean getSurveyBean() {
+			return surveyBean;
+		}
+
+
+
+		public void setSurveyBean(SurveyBean surveyBean) {
+			this.surveyBean = surveyBean;
+		}
+
+
+
 		/* (non-Javadoc)
 		 * @see android.support.v4.app.FragmentActivity#onCreate(android.os.Bundle)
 		 */
 		@Override
 		protected void onCreate(Bundle savedInstanceState) {
 			super.onCreate(savedInstanceState);
+			
+//			SurveyBeanSerializable t = (SurveyBeanSerializable) getIntent().getExtras().getSerializable("bean");
+			surveyBean = (SurveyBean) getIntent().getExtras().getSerializable("bean");
+			Log.i("t", surveyBean.getName());
 			
 			// working
 //			setContentView(R.layout.viewpager2);
@@ -63,6 +84,9 @@ public class QuestionsPager extends FragmentActivity {
 		    
 		    url = (EditText) findViewById(R.id.url);		    
 		    url.setText(CONSTANTS.SURVEY_WEBSERVICE_URL + CONSTANTS.SURVEY_WEBSERVICE_SELECT_MODEL + "/");
+		    
+		    
+		    
 		    
 //			String json = Utils.readFile(this, R.raw.survey_new);
 //			 ParserUtils.parseJSON(this, json, CONSTANTS.LOCALE);
@@ -98,10 +122,17 @@ public class QuestionsPager extends FragmentActivity {
 		private void initialisePaging(String json) {
 
 			List<Question> fragments = new Vector<Question>();
-			SurveyBean surveyBean = ParserUtils.parseJSON(this, json);
+//			SurveyBean surveyBean = ParserUtils.parseJSON(this, json);
+			
+			Log.i("initialisePaging", "here");
+
+			SurveyBean sb = getSurveyBean();
+			
+			Log.i("initialisePaging", sb.getName());
+
 			
 			int i = 1;
-			for(QuestionBean question : surveyBean.getQuestions()) {
+			for(QuestionBean question : sb.getQuestions()) {
 				question.setNumber(String.valueOf(i)); // TODO; it was a test
 				fragments.add((Question) Question.newInstance(question));
 				i++;

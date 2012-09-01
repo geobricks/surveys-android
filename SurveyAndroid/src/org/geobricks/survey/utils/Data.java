@@ -1,6 +1,13 @@
 package org.geobricks.survey.utils;
 
-public class Data {
+import java.io.Serializable;
+
+public class Data  implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	String code;
 

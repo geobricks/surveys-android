@@ -1,6 +1,8 @@
 package org.geobricks.survey.constants;
 
-public enum SURVEYTYPE {
+import java.io.Serializable;
+
+public enum SURVEYTYPE  implements Serializable {
 	
 	
 }
