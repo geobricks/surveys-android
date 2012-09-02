@@ -4,14 +4,13 @@ import java.util.List;
 import java.util.Vector;
 
 import org.geobricks.survey.R;
-import org.geobricks.survey.StartUpActivity;
 import org.geobricks.survey.bean.QuestionBean;
 import org.geobricks.survey.bean.SurveyBean;
 import org.geobricks.survey.constants.LOG;
-import org.geobricks.survey.surveyslist.SurveysListviewActivity;
 import org.geobricks.survey.utils.Utils;
 
-import android.content.Intent;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
@@ -211,6 +210,41 @@ public class QuestionsPager extends FragmentActivity {
 				pager.setCurrentItem(questionFragments.size()-1, false);
 			}
 		}
+	    
+	    @Override
+	public void onBackPressed() {
+		AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+
+		// set title
+		alertDialogBuilder.setTitle(R.string.exitSurvey);
+
+		// set dialog message
+		alertDialogBuilder
+				.setCancelable(false)
+				.setPositiveButton(R.string.yes,
+						new DialogInterface.OnClickListener() {
+							public void onClick(DialogInterface dialog, int id) {
+								// if this button is clicked, close
+								// current activity
+						        finish();				      
+							}
+						})
+				.setNegativeButton(R.string.no, new DialogInterface.OnClickListener() {
+					public void onClick(DialogInterface dialog, int id) {
+						// if this button is clicked, just close
+						// the dialog box and do nothing
+						dialog.cancel();
+					}
+				});
+
+		// create alert dialog
+		AlertDialog alertDialog = alertDialogBuilder.create();
+
+		// show it
+		alertDialog.show();
+
+	}
+
 
 
 		public List<Question> getQuestionFragments() {
