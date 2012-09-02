@@ -5,7 +5,7 @@ import java.util.List;
 
 import org.geobricks.survey.utils.Data;
 
-public class AnswerChoicesBean  implements Serializable {
+public class ChoicesBean  implements Serializable {
 	
 	/**
 	 * 

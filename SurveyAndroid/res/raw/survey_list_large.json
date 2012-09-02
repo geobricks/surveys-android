@@ -341,5 +341,2063 @@
 			] 
 		} 
 	] 
+},
+ {
+   "_id":"504223e971d8b28f76000001",
+   "en_abstract":"An example for the new JSON",
+   "en_default_language":"en",
+   "en_name":"Multiple Choices",
+   "model_creation_date":"2012-09-01T15:04:09.582Z",
+   "model_date_last_update":"2012-09-01T15:04:09.582Z",
+   "model_questions":[
+      {
+         "answer_type":"multiple_choice",
+         "question_number":"1",
+         "en_text":"What's your name?",
+         "en_info":"People use this word to call you",
+         "en_indicator":"Name",
+         "choices":[
+            {
+               "choice_number":"1",
+               "choice_code":"AZ-01",
+               "ar_choice_label":"Guido",
+               "cn_choice_label":"Guido",
+               "de_choice_label":"Guido",
+               "es_choice_label":"Guido",
+               "en_choice_label":"Guido",
+               "fr_choice_label":"Guido",
+               "in_choice_label":"Guido",
+               "it_choice_label":"Guido",
+               "jp_choice_label":"Guido",
+               "pt_choice_label":"Guido",
+               "ru_choice_label":"Guido"
+            },
+            {
+               "choice_number":"2",
+               "choice_code":"AZ-02",
+               "ar_choice_label":"",
+               "cn_choice_label":"",
+               "de_choice_label":"",
+               "es_choice_label":"",
+               "en_choice_label":"Simone",
+               "fr_choice_label":"",
+               "in_choice_label":"",
+               "it_choice_label":"Simone",
+               "jp_choice_label":"",
+               "pt_choice_label":"",
+               "ru_choice_label":""
+            }
+         ]
+      }
+   ]
+},   { 
+	"_id" : "503a5559e8fc8d384400000d", 
+	"en_abstract" : "And this is its description", 
+	"en_name" : "This is just a test", 
+	"model_creation_date" : "2012-08-26T16:56:57.238Z", 
+	"model_date_last_update" : "2012-08-26T16:56:57.238Z", 
+	"model_default_language" : "en", 
+	"model_questions" : [ 	
+		{ 	
+			"answer_type" : "single_value_text", 	
+			"question_number" : "1", 	
+			"en_text" : "What's your name?", 	
+			"en_info" : "People use it to call you",
+			"en_indicator" : "Name", 	
+			"it_text" : "Come ti chiami?", 	
+			"it_info" : "La gente usa il tuo nome per chiamarti" 
+		}, 	
+		{ 	
+			"answer_type" : "single_value_number", 	
+			"question_number" : "2", 	
+			"en_text" : "How old are you?", 	
+			"en_info" : "Milliseconds since Jan 1st 1970",
+			"en_indicator" : "Age" ,	
+			"it_text" : "Quanti anni hai?", 	
+			"it_info" : "Millisecondi dal 1 Gen 1970" 
+		}, 	
+		{ 	
+			"answer_type" : "single_value_boolean", 	
+			"question_number" : "3", 	
+			"en_text" : "Are you rich?", 	
+			"en_info" : "State if you can easily pay the bills", 	
+			"en_indicator" : "Wealth" 
+		},
+		{ 	
+			"answer_type" : "multiple_choice", 	
+			"question_number" : "4", 	
+			"en_text" : "What's your education level?", 	
+			"en_info" : "Determine if a person as a higher education", 	
+			"en_indicator" : "Education Level",
+			"choices" : [
+				{
+					"en_choice_label" : "Illiterate",
+					"it_choice_label" : "Analfabeta",
+					"choice_code" : "0"
+				},
+				{
+					"en_choice_label" : "Primary",
+					"it_choice_label" : "Elementare",
+					"choice_code" : "1"
+				},
+				{
+					"en_choice_label" : "University",
+					"it_choice_label" : "Universita",
+					"choice_code" : "2"
+				}
+			] 
+		} 
+	] 
+},
+   { 
+	"_id" : "503a5559e8fc8d384400000d", 
+	"en_abstract" : "And this is its description", 
+	"en_name" : "This is just a test", 
+	"model_creation_date" : "2012-08-26T16:56:57.238Z", 
+	"model_date_last_update" : "2012-08-26T16:56:57.238Z", 
+	"model_default_language" : "en", 
+	"model_questions" : [ 	
+		{ 	
+			"answer_type" : "single_value_text", 	
+			"question_number" : "1", 	
+			"en_text" : "What's your name?", 	
+			"en_info" : "People use it to call you",
+			"en_indicator" : "Name", 	
+			"it_text" : "Come ti chiami?", 	
+			"it_info" : "La gente usa il tuo nome per chiamarti" 
+		}, 	
+		{ 	
+			"answer_type" : "single_value_number", 	
+			"question_number" : "2", 	
+			"en_text" : "How old are you?", 	
+			"en_info" : "Milliseconds since Jan 1st 1970",
+			"en_indicator" : "Age" ,	
+			"it_text" : "Quanti anni hai?", 	
+			"it_info" : "Millisecondi dal 1 Gen 1970" 
+		}, 	
+		{ 	
+			"answer_type" : "single_value_boolean", 	
+			"question_number" : "3", 	
+			"en_text" : "Are you rich?", 	
+			"en_info" : "State if you can easily pay the bills", 	
+			"en_indicator" : "Wealth" 
+		},
+		{ 	
+			"answer_type" : "multiple_choice", 	
+			"question_number" : "4", 	
+			"en_text" : "What's your education level?", 	
+			"en_info" : "Determine if a person as a higher education", 	
+			"en_indicator" : "Education Level",
+			"choices" : [
+				{
+					"en_choice_label" : "Illiterate",
+					"it_choice_label" : "Analfabeta",
+					"choice_code" : "0"
+				},
+				{
+					"en_choice_label" : "Primary",
+					"it_choice_label" : "Elementare",
+					"choice_code" : "1"
+				},
+				{
+					"en_choice_label" : "University",
+					"it_choice_label" : "Universita",
+					"choice_code" : "2"
+				}
+			] 
+		} 
+	] 
+},
+   { 
+	"_id" : "503a5559e8fc8d384400000d", 
+	"en_abstract" : "And this is its description", 
+	"en_name" : "This is just a test", 
+	"model_creation_date" : "2012-08-26T16:56:57.238Z", 
+	"model_date_last_update" : "2012-08-26T16:56:57.238Z", 
+	"model_default_language" : "en", 
+	"model_questions" : [ 	
+		{ 	
+			"answer_type" : "single_value_text", 	
+			"question_number" : "1", 	
+			"en_text" : "What's your name?", 	
+			"en_info" : "People use it to call you",
+			"en_indicator" : "Name", 	
+			"it_text" : "Come ti chiami?", 	
+			"it_info" : "La gente usa il tuo nome per chiamarti" 
+		}, 	
+		{ 	
+			"answer_type" : "single_value_number", 	
+			"question_number" : "2", 	
+			"en_text" : "How old are you?", 	
+			"en_info" : "Milliseconds since Jan 1st 1970",
+			"en_indicator" : "Age" ,	
+			"it_text" : "Quanti anni hai?", 	
+			"it_info" : "Millisecondi dal 1 Gen 1970" 
+		}, 	
+		{ 	
+			"answer_type" : "single_value_boolean", 	
+			"question_number" : "3", 	
+			"en_text" : "Are you rich?", 	
+			"en_info" : "State if you can easily pay the bills", 	
+			"en_indicator" : "Wealth" 
+		},
+		{ 	
+			"answer_type" : "multiple_choice", 	
+			"question_number" : "4", 	
+			"en_text" : "What's your education level?", 	
+			"en_info" : "Determine if a person as a higher education", 	
+			"en_indicator" : "Education Level",
+			"choices" : [
+				{
+					"en_choice_label" : "Illiterate",
+					"it_choice_label" : "Analfabeta",
+					"choice_code" : "0"
+				},
+				{
+					"en_choice_label" : "Primary",
+					"it_choice_label" : "Elementare",
+					"choice_code" : "1"
+				},
+				{
+					"en_choice_label" : "University",
+					"it_choice_label" : "Universita",
+					"choice_code" : "2"
+				}
+			] 
+		} 
+	] 
+},
+   { 
+	"_id" : "503a5559e8fc8d384400000d", 
+	"en_abstract" : "And this is its description", 
+	"en_name" : "This is just a test", 
+	"model_creation_date" : "2012-08-26T16:56:57.238Z", 
+	"model_date_last_update" : "2012-08-26T16:56:57.238Z", 
+	"model_default_language" : "en", 
+	"model_questions" : [ 	
+		{ 	
+			"answer_type" : "single_value_text", 	
+			"question_number" : "1", 	
+			"en_text" : "What's your name?", 	
+			"en_info" : "People use it to call you",
+			"en_indicator" : "Name", 	
+			"it_text" : "Come ti chiami?", 	
+			"it_info" : "La gente usa il tuo nome per chiamarti" 
+		}, 	
+		{ 	
+			"answer_type" : "single_value_number", 	
+			"question_number" : "2", 	
+			"en_text" : "How old are you?", 	
+			"en_info" : "Milliseconds since Jan 1st 1970",
+			"en_indicator" : "Age" ,	
+			"it_text" : "Quanti anni hai?", 	
+			"it_info" : "Millisecondi dal 1 Gen 1970" 
+		}, 	
+		{ 	
+			"answer_type" : "single_value_boolean", 	
+			"question_number" : "3", 	
+			"en_text" : "Are you rich?", 	
+			"en_info" : "State if you can easily pay the bills", 	
+			"en_indicator" : "Wealth" 
+		},
+		{ 	
+			"answer_type" : "multiple_choice", 	
+			"question_number" : "4", 	
+			"en_text" : "What's your education level?", 	
+			"en_info" : "Determine if a person as a higher education", 	
+			"en_indicator" : "Education Level",
+			"choices" : [
+				{
+					"en_choice_label" : "Illiterate",
+					"it_choice_label" : "Analfabeta",
+					"choice_code" : "0"
+				},
+				{
+					"en_choice_label" : "Primary",
+					"it_choice_label" : "Elementare",
+					"choice_code" : "1"
+				},
+				{
+					"en_choice_label" : "University",
+					"it_choice_label" : "Universita",
+					"choice_code" : "2"
+				}
+			] 
+		} 
+	] 
+},
+   { 
+	"_id" : "503a5559e8fc8d384400000d", 
+	"en_abstract" : "And this is its description", 
+	"en_name" : "This is just a test", 
+	"model_creation_date" : "2012-08-26T16:56:57.238Z", 
+	"model_date_last_update" : "2012-08-26T16:56:57.238Z", 
+	"model_default_language" : "en", 
+	"model_questions" : [ 	
+		{ 	
+			"answer_type" : "single_value_text", 	
+			"question_number" : "1", 	
+			"en_text" : "What's your name?", 	
+			"en_info" : "People use it to call you",
+			"en_indicator" : "Name", 	
+			"it_text" : "Come ti chiami?", 	
+			"it_info" : "La gente usa il tuo nome per chiamarti" 
+		}, 	
+		{ 	
+			"answer_type" : "single_value_number", 	
+			"question_number" : "2", 	
+			"en_text" : "How old are you?", 	
+			"en_info" : "Milliseconds since Jan 1st 1970",
+			"en_indicator" : "Age" ,	
+			"it_text" : "Quanti anni hai?", 	
+			"it_info" : "Millisecondi dal 1 Gen 1970" 
+		}, 	
+		{ 	
+			"answer_type" : "single_value_boolean", 	
+			"question_number" : "3", 	
+			"en_text" : "Are you rich?", 	
+			"en_info" : "State if you can easily pay the bills", 	
+			"en_indicator" : "Wealth" 
+		},
+		{ 	
+			"answer_type" : "multiple_choice", 	
+			"question_number" : "4", 	
+			"en_text" : "What's your education level?", 	
+			"en_info" : "Determine if a person as a higher education", 	
+			"en_indicator" : "Education Level",
+			"choices" : [
+				{
+					"en_choice_label" : "Illiterate",
+					"it_choice_label" : "Analfabeta",
+					"choice_code" : "0"
+				},
+				{
+					"en_choice_label" : "Primary",
+					"it_choice_label" : "Elementare",
+					"choice_code" : "1"
+				},
+				{
+					"en_choice_label" : "University",
+					"it_choice_label" : "Universita",
+					"choice_code" : "2"
+				}
+			] 
+		} 
+	] 
+},
+ {
+   "_id":"504223e971d8b28f76000001",
+   "en_abstract":"An example for the new JSON",
+   "en_default_language":"en",
+   "en_name":"Multiple Choices",
+   "model_creation_date":"2012-09-01T15:04:09.582Z",
+   "model_date_last_update":"2012-09-01T15:04:09.582Z",
+   "model_questions":[
+      {
+         "answer_type":"multiple_choice",
+         "question_number":"1",
+         "en_text":"What's your name?",
+         "en_info":"People use this word to call you",
+         "en_indicator":"Name",
+         "choices":[
+            {
+               "choice_number":"1",
+               "choice_code":"AZ-01",
+               "ar_choice_label":"Guido",
+               "cn_choice_label":"Guido",
+               "de_choice_label":"Guido",
+               "es_choice_label":"Guido",
+               "en_choice_label":"Guido",
+               "fr_choice_label":"Guido",
+               "in_choice_label":"Guido",
+               "it_choice_label":"Guido",
+               "jp_choice_label":"Guido",
+               "pt_choice_label":"Guido",
+               "ru_choice_label":"Guido"
+            },
+            {
+               "choice_number":"2",
+               "choice_code":"AZ-02",
+               "ar_choice_label":"",
+               "cn_choice_label":"",
+               "de_choice_label":"",
+               "es_choice_label":"",
+               "en_choice_label":"Simone",
+               "fr_choice_label":"",
+               "in_choice_label":"",
+               "it_choice_label":"Simone",
+               "jp_choice_label":"",
+               "pt_choice_label":"",
+               "ru_choice_label":""
+            }
+         ]
+      }
+   ]
+},   { 
+	"_id" : "503a5559e8fc8d384400000d", 
+	"en_abstract" : "And this is its description", 
+	"en_name" : "This is just a test", 
+	"model_creation_date" : "2012-08-26T16:56:57.238Z", 
+	"model_date_last_update" : "2012-08-26T16:56:57.238Z", 
+	"model_default_language" : "en", 
+	"model_questions" : [ 	
+		{ 	
+			"answer_type" : "single_value_text", 	
+			"question_number" : "1", 	
+			"en_text" : "What's your name?", 	
+			"en_info" : "People use it to call you",
+			"en_indicator" : "Name", 	
+			"it_text" : "Come ti chiami?", 	
+			"it_info" : "La gente usa il tuo nome per chiamarti" 
+		}, 	
+		{ 	
+			"answer_type" : "single_value_number", 	
+			"question_number" : "2", 	
+			"en_text" : "How old are you?", 	
+			"en_info" : "Milliseconds since Jan 1st 1970",
+			"en_indicator" : "Age" ,	
+			"it_text" : "Quanti anni hai?", 	
+			"it_info" : "Millisecondi dal 1 Gen 1970" 
+		}, 	
+		{ 	
+			"answer_type" : "single_value_boolean", 	
+			"question_number" : "3", 	
+			"en_text" : "Are you rich?", 	
+			"en_info" : "State if you can easily pay the bills", 	
+			"en_indicator" : "Wealth" 
+		},
+		{ 	
+			"answer_type" : "multiple_choice", 	
+			"question_number" : "4", 	
+			"en_text" : "What's your education level?", 	
+			"en_info" : "Determine if a person as a higher education", 	
+			"en_indicator" : "Education Level",
+			"choices" : [
+				{
+					"en_choice_label" : "Illiterate",
+					"it_choice_label" : "Analfabeta",
+					"choice_code" : "0"
+				},
+				{
+					"en_choice_label" : "Primary",
+					"it_choice_label" : "Elementare",
+					"choice_code" : "1"
+				},
+				{
+					"en_choice_label" : "University",
+					"it_choice_label" : "Universita",
+					"choice_code" : "2"
+				}
+			] 
+		} 
+	] 
+},
+   { 
+	"_id" : "503a5559e8fc8d384400000d", 
+	"en_abstract" : "And this is its description", 
+	"en_name" : "This is just a test", 
+	"model_creation_date" : "2012-08-26T16:56:57.238Z", 
+	"model_date_last_update" : "2012-08-26T16:56:57.238Z", 
+	"model_default_language" : "en", 
+	"model_questions" : [ 	
+		{ 	
+			"answer_type" : "single_value_text", 	
+			"question_number" : "1", 	
+			"en_text" : "What's your name?", 	
+			"en_info" : "People use it to call you",
+			"en_indicator" : "Name", 	
+			"it_text" : "Come ti chiami?", 	
+			"it_info" : "La gente usa il tuo nome per chiamarti" 
+		}, 	
+		{ 	
+			"answer_type" : "single_value_number", 	
+			"question_number" : "2", 	
+			"en_text" : "How old are you?", 	
+			"en_info" : "Milliseconds since Jan 1st 1970",
+			"en_indicator" : "Age" ,	
+			"it_text" : "Quanti anni hai?", 	
+			"it_info" : "Millisecondi dal 1 Gen 1970" 
+		}, 	
+		{ 	
+			"answer_type" : "single_value_boolean", 	
+			"question_number" : "3", 	
+			"en_text" : "Are you rich?", 	
+			"en_info" : "State if you can easily pay the bills", 	
+			"en_indicator" : "Wealth" 
+		},
+		{ 	
+			"answer_type" : "multiple_choice", 	
+			"question_number" : "4", 	
+			"en_text" : "What's your education level?", 	
+			"en_info" : "Determine if a person as a higher education", 	
+			"en_indicator" : "Education Level",
+			"choices" : [
+				{
+					"en_choice_label" : "Illiterate",
+					"it_choice_label" : "Analfabeta",
+					"choice_code" : "0"
+				},
+				{
+					"en_choice_label" : "Primary",
+					"it_choice_label" : "Elementare",
+					"choice_code" : "1"
+				},
+				{
+					"en_choice_label" : "University",
+					"it_choice_label" : "Universita",
+					"choice_code" : "2"
+				}
+			] 
+		} 
+	] 
+},
+   { 
+	"_id" : "503a5559e8fc8d384400000d", 
+	"en_abstract" : "And this is its description", 
+	"en_name" : "This is just a test", 
+	"model_creation_date" : "2012-08-26T16:56:57.238Z", 
+	"model_date_last_update" : "2012-08-26T16:56:57.238Z", 
+	"model_default_language" : "en", 
+	"model_questions" : [ 	
+		{ 	
+			"answer_type" : "single_value_text", 	
+			"question_number" : "1", 	
+			"en_text" : "What's your name?", 	
+			"en_info" : "People use it to call you",
+			"en_indicator" : "Name", 	
+			"it_text" : "Come ti chiami?", 	
+			"it_info" : "La gente usa il tuo nome per chiamarti" 
+		}, 	
+		{ 	
+			"answer_type" : "single_value_number", 	
+			"question_number" : "2", 	
+			"en_text" : "How old are you?", 	
+			"en_info" : "Milliseconds since Jan 1st 1970",
+			"en_indicator" : "Age" ,	
+			"it_text" : "Quanti anni hai?", 	
+			"it_info" : "Millisecondi dal 1 Gen 1970" 
+		}, 	
+		{ 	
+			"answer_type" : "single_value_boolean", 	
+			"question_number" : "3", 	
+			"en_text" : "Are you rich?", 	
+			"en_info" : "State if you can easily pay the bills", 	
+			"en_indicator" : "Wealth" 
+		},
+		{ 	
+			"answer_type" : "multiple_choice", 	
+			"question_number" : "4", 	
+			"en_text" : "What's your education level?", 	
+			"en_info" : "Determine if a person as a higher education", 	
+			"en_indicator" : "Education Level",
+			"choices" : [
+				{
+					"en_choice_label" : "Illiterate",
+					"it_choice_label" : "Analfabeta",
+					"choice_code" : "0"
+				},
+				{
+					"en_choice_label" : "Primary",
+					"it_choice_label" : "Elementare",
+					"choice_code" : "1"
+				},
+				{
+					"en_choice_label" : "University",
+					"it_choice_label" : "Universita",
+					"choice_code" : "2"
+				}
+			] 
+		} 
+	] 
+},
+   { 
+	"_id" : "503a5559e8fc8d384400000d", 
+	"en_abstract" : "And this is its description", 
+	"en_name" : "This is just a test", 
+	"model_creation_date" : "2012-08-26T16:56:57.238Z", 
+	"model_date_last_update" : "2012-08-26T16:56:57.238Z", 
+	"model_default_language" : "en", 
+	"model_questions" : [ 	
+		{ 	
+			"answer_type" : "single_value_text", 	
+			"question_number" : "1", 	
+			"en_text" : "What's your name?", 	
+			"en_info" : "People use it to call you",
+			"en_indicator" : "Name", 	
+			"it_text" : "Come ti chiami?", 	
+			"it_info" : "La gente usa il tuo nome per chiamarti" 
+		}, 	
+		{ 	
+			"answer_type" : "single_value_number", 	
+			"question_number" : "2", 	
+			"en_text" : "How old are you?", 	
+			"en_info" : "Milliseconds since Jan 1st 1970",
+			"en_indicator" : "Age" ,	
+			"it_text" : "Quanti anni hai?", 	
+			"it_info" : "Millisecondi dal 1 Gen 1970" 
+		}, 	
+		{ 	
+			"answer_type" : "single_value_boolean", 	
+			"question_number" : "3", 	
+			"en_text" : "Are you rich?", 	
+			"en_info" : "State if you can easily pay the bills", 	
+			"en_indicator" : "Wealth" 
+		},
+		{ 	
+			"answer_type" : "multiple_choice", 	
+			"question_number" : "4", 	
+			"en_text" : "What's your education level?", 	
+			"en_info" : "Determine if a person as a higher education", 	
+			"en_indicator" : "Education Level",
+			"choices" : [
+				{
+					"en_choice_label" : "Illiterate",
+					"it_choice_label" : "Analfabeta",
+					"choice_code" : "0"
+				},
+				{
+					"en_choice_label" : "Primary",
+					"it_choice_label" : "Elementare",
+					"choice_code" : "1"
+				},
+				{
+					"en_choice_label" : "University",
+					"it_choice_label" : "Universita",
+					"choice_code" : "2"
+				}
+			] 
+		} 
+	] 
+},
+   { 
+	"_id" : "503a5559e8fc8d384400000d", 
+	"en_abstract" : "And this is its description", 
+	"en_name" : "This is just a test", 
+	"model_creation_date" : "2012-08-26T16:56:57.238Z", 
+	"model_date_last_update" : "2012-08-26T16:56:57.238Z", 
+	"model_default_language" : "en", 
+	"model_questions" : [ 	
+		{ 	
+			"answer_type" : "single_value_text", 	
+			"question_number" : "1", 	
+			"en_text" : "What's your name?", 	
+			"en_info" : "People use it to call you",
+			"en_indicator" : "Name", 	
+			"it_text" : "Come ti chiami?", 	
+			"it_info" : "La gente usa il tuo nome per chiamarti" 
+		}, 	
+		{ 	
+			"answer_type" : "single_value_number", 	
+			"question_number" : "2", 	
+			"en_text" : "How old are you?", 	
+			"en_info" : "Milliseconds since Jan 1st 1970",
+			"en_indicator" : "Age" ,	
+			"it_text" : "Quanti anni hai?", 	
+			"it_info" : "Millisecondi dal 1 Gen 1970" 
+		}, 	
+		{ 	
+			"answer_type" : "single_value_boolean", 	
+			"question_number" : "3", 	
+			"en_text" : "Are you rich?", 	
+			"en_info" : "State if you can easily pay the bills", 	
+			"en_indicator" : "Wealth" 
+		},
+		{ 	
+			"answer_type" : "multiple_choice", 	
+			"question_number" : "4", 	
+			"en_text" : "What's your education level?", 	
+			"en_info" : "Determine if a person as a higher education", 	
+			"en_indicator" : "Education Level",
+			"choices" : [
+				{
+					"en_choice_label" : "Illiterate",
+					"it_choice_label" : "Analfabeta",
+					"choice_code" : "0"
+				},
+				{
+					"en_choice_label" : "Primary",
+					"it_choice_label" : "Elementare",
+					"choice_code" : "1"
+				},
+				{
+					"en_choice_label" : "University",
+					"it_choice_label" : "Universita",
+					"choice_code" : "2"
+				}
+			] 
+		} 
+	] 
+},
+ {
+   "_id":"504223e971d8b28f76000001",
+   "en_abstract":"An example for the new JSON",
+   "en_default_language":"en",
+   "en_name":"Multiple Choices",
+   "model_creation_date":"2012-09-01T15:04:09.582Z",
+   "model_date_last_update":"2012-09-01T15:04:09.582Z",
+   "model_questions":[
+      {
+         "answer_type":"multiple_choice",
+         "question_number":"1",
+         "en_text":"What's your name?",
+         "en_info":"People use this word to call you",
+         "en_indicator":"Name",
+         "choices":[
+            {
+               "choice_number":"1",
+               "choice_code":"AZ-01",
+               "ar_choice_label":"Guido",
+               "cn_choice_label":"Guido",
+               "de_choice_label":"Guido",
+               "es_choice_label":"Guido",
+               "en_choice_label":"Guido",
+               "fr_choice_label":"Guido",
+               "in_choice_label":"Guido",
+               "it_choice_label":"Guido",
+               "jp_choice_label":"Guido",
+               "pt_choice_label":"Guido",
+               "ru_choice_label":"Guido"
+            },
+            {
+               "choice_number":"2",
+               "choice_code":"AZ-02",
+               "ar_choice_label":"",
+               "cn_choice_label":"",
+               "de_choice_label":"",
+               "es_choice_label":"",
+               "en_choice_label":"Simone",
+               "fr_choice_label":"",
+               "in_choice_label":"",
+               "it_choice_label":"Simone",
+               "jp_choice_label":"",
+               "pt_choice_label":"",
+               "ru_choice_label":""
+            }
+         ]
+      }
+   ]
+},   { 
+	"_id" : "503a5559e8fc8d384400000d", 
+	"en_abstract" : "And this is its description", 
+	"en_name" : "This is just a test", 
+	"model_creation_date" : "2012-08-26T16:56:57.238Z", 
+	"model_date_last_update" : "2012-08-26T16:56:57.238Z", 
+	"model_default_language" : "en", 
+	"model_questions" : [ 	
+		{ 	
+			"answer_type" : "single_value_text", 	
+			"question_number" : "1", 	
+			"en_text" : "What's your name?", 	
+			"en_info" : "People use it to call you",
+			"en_indicator" : "Name", 	
+			"it_text" : "Come ti chiami?", 	
+			"it_info" : "La gente usa il tuo nome per chiamarti" 
+		}, 	
+		{ 	
+			"answer_type" : "single_value_number", 	
+			"question_number" : "2", 	
+			"en_text" : "How old are you?", 	
+			"en_info" : "Milliseconds since Jan 1st 1970",
+			"en_indicator" : "Age" ,	
+			"it_text" : "Quanti anni hai?", 	
+			"it_info" : "Millisecondi dal 1 Gen 1970" 
+		}, 	
+		{ 	
+			"answer_type" : "single_value_boolean", 	
+			"question_number" : "3", 	
+			"en_text" : "Are you rich?", 	
+			"en_info" : "State if you can easily pay the bills", 	
+			"en_indicator" : "Wealth" 
+		},
+		{ 	
+			"answer_type" : "multiple_choice", 	
+			"question_number" : "4", 	
+			"en_text" : "What's your education level?", 	
+			"en_info" : "Determine if a person as a higher education", 	
+			"en_indicator" : "Education Level",
+			"choices" : [
+				{
+					"en_choice_label" : "Illiterate",
+					"it_choice_label" : "Analfabeta",
+					"choice_code" : "0"
+				},
+				{
+					"en_choice_label" : "Primary",
+					"it_choice_label" : "Elementare",
+					"choice_code" : "1"
+				},
+				{
+					"en_choice_label" : "University",
+					"it_choice_label" : "Universita",
+					"choice_code" : "2"
+				}
+			] 
+		} 
+	] 
+},
+   { 
+	"_id" : "503a5559e8fc8d384400000d", 
+	"en_abstract" : "And this is its description", 
+	"en_name" : "This is just a test", 
+	"model_creation_date" : "2012-08-26T16:56:57.238Z", 
+	"model_date_last_update" : "2012-08-26T16:56:57.238Z", 
+	"model_default_language" : "en", 
+	"model_questions" : [ 	
+		{ 	
+			"answer_type" : "single_value_text", 	
+			"question_number" : "1", 	
+			"en_text" : "What's your name?", 	
+			"en_info" : "People use it to call you",
+			"en_indicator" : "Name", 	
+			"it_text" : "Come ti chiami?", 	
+			"it_info" : "La gente usa il tuo nome per chiamarti" 
+		}, 	
+		{ 	
+			"answer_type" : "single_value_number", 	
+			"question_number" : "2", 	
+			"en_text" : "How old are you?", 	
+			"en_info" : "Milliseconds since Jan 1st 1970",
+			"en_indicator" : "Age" ,	
+			"it_text" : "Quanti anni hai?", 	
+			"it_info" : "Millisecondi dal 1 Gen 1970" 
+		}, 	
+		{ 	
+			"answer_type" : "single_value_boolean", 	
+			"question_number" : "3", 	
+			"en_text" : "Are you rich?", 	
+			"en_info" : "State if you can easily pay the bills", 	
+			"en_indicator" : "Wealth" 
+		},
+		{ 	
+			"answer_type" : "multiple_choice", 	
+			"question_number" : "4", 	
+			"en_text" : "What's your education level?", 	
+			"en_info" : "Determine if a person as a higher education", 	
+			"en_indicator" : "Education Level",
+			"choices" : [
+				{
+					"en_choice_label" : "Illiterate",
+					"it_choice_label" : "Analfabeta",
+					"choice_code" : "0"
+				},
+				{
+					"en_choice_label" : "Primary",
+					"it_choice_label" : "Elementare",
+					"choice_code" : "1"
+				},
+				{
+					"en_choice_label" : "University",
+					"it_choice_label" : "Universita",
+					"choice_code" : "2"
+				}
+			] 
+		} 
+	] 
+},
+   { 
+	"_id" : "503a5559e8fc8d384400000d", 
+	"en_abstract" : "And this is its description", 
+	"en_name" : "This is just a test", 
+	"model_creation_date" : "2012-08-26T16:56:57.238Z", 
+	"model_date_last_update" : "2012-08-26T16:56:57.238Z", 
+	"model_default_language" : "en", 
+	"model_questions" : [ 	
+		{ 	
+			"answer_type" : "single_value_text", 	
+			"question_number" : "1", 	
+			"en_text" : "What's your name?", 	
+			"en_info" : "People use it to call you",
+			"en_indicator" : "Name", 	
+			"it_text" : "Come ti chiami?", 	
+			"it_info" : "La gente usa il tuo nome per chiamarti" 
+		}, 	
+		{ 	
+			"answer_type" : "single_value_number", 	
+			"question_number" : "2", 	
+			"en_text" : "How old are you?", 	
+			"en_info" : "Milliseconds since Jan 1st 1970",
+			"en_indicator" : "Age" ,	
+			"it_text" : "Quanti anni hai?", 	
+			"it_info" : "Millisecondi dal 1 Gen 1970" 
+		}, 	
+		{ 	
+			"answer_type" : "single_value_boolean", 	
+			"question_number" : "3", 	
+			"en_text" : "Are you rich?", 	
+			"en_info" : "State if you can easily pay the bills", 	
+			"en_indicator" : "Wealth" 
+		},
+		{ 	
+			"answer_type" : "multiple_choice", 	
+			"question_number" : "4", 	
+			"en_text" : "What's your education level?", 	
+			"en_info" : "Determine if a person as a higher education", 	
+			"en_indicator" : "Education Level",
+			"choices" : [
+				{
+					"en_choice_label" : "Illiterate",
+					"it_choice_label" : "Analfabeta",
+					"choice_code" : "0"
+				},
+				{
+					"en_choice_label" : "Primary",
+					"it_choice_label" : "Elementare",
+					"choice_code" : "1"
+				},
+				{
+					"en_choice_label" : "University",
+					"it_choice_label" : "Universita",
+					"choice_code" : "2"
+				}
+			] 
+		} 
+	] 
+},
+   { 
+	"_id" : "503a5559e8fc8d384400000d", 
+	"en_abstract" : "And this is its description", 
+	"en_name" : "This is just a test", 
+	"model_creation_date" : "2012-08-26T16:56:57.238Z", 
+	"model_date_last_update" : "2012-08-26T16:56:57.238Z", 
+	"model_default_language" : "en", 
+	"model_questions" : [ 	
+		{ 	
+			"answer_type" : "single_value_text", 	
+			"question_number" : "1", 	
+			"en_text" : "What's your name?", 	
+			"en_info" : "People use it to call you",
+			"en_indicator" : "Name", 	
+			"it_text" : "Come ti chiami?", 	
+			"it_info" : "La gente usa il tuo nome per chiamarti" 
+		}, 	
+		{ 	
+			"answer_type" : "single_value_number", 	
+			"question_number" : "2", 	
+			"en_text" : "How old are you?", 	
+			"en_info" : "Milliseconds since Jan 1st 1970",
+			"en_indicator" : "Age" ,	
+			"it_text" : "Quanti anni hai?", 	
+			"it_info" : "Millisecondi dal 1 Gen 1970" 
+		}, 	
+		{ 	
+			"answer_type" : "single_value_boolean", 	
+			"question_number" : "3", 	
+			"en_text" : "Are you rich?", 	
+			"en_info" : "State if you can easily pay the bills", 	
+			"en_indicator" : "Wealth" 
+		},
+		{ 	
+			"answer_type" : "multiple_choice", 	
+			"question_number" : "4", 	
+			"en_text" : "What's your education level?", 	
+			"en_info" : "Determine if a person as a higher education", 	
+			"en_indicator" : "Education Level",
+			"choices" : [
+				{
+					"en_choice_label" : "Illiterate",
+					"it_choice_label" : "Analfabeta",
+					"choice_code" : "0"
+				},
+				{
+					"en_choice_label" : "Primary",
+					"it_choice_label" : "Elementare",
+					"choice_code" : "1"
+				},
+				{
+					"en_choice_label" : "University",
+					"it_choice_label" : "Universita",
+					"choice_code" : "2"
+				}
+			] 
+		} 
+	] 
+},
+   { 
+	"_id" : "503a5559e8fc8d384400000d", 
+	"en_abstract" : "And this is its description", 
+	"en_name" : "This is just a test", 
+	"model_creation_date" : "2012-08-26T16:56:57.238Z", 
+	"model_date_last_update" : "2012-08-26T16:56:57.238Z", 
+	"model_default_language" : "en", 
+	"model_questions" : [ 	
+		{ 	
+			"answer_type" : "single_value_text", 	
+			"question_number" : "1", 	
+			"en_text" : "What's your name?", 	
+			"en_info" : "People use it to call you",
+			"en_indicator" : "Name", 	
+			"it_text" : "Come ti chiami?", 	
+			"it_info" : "La gente usa il tuo nome per chiamarti" 
+		}, 	
+		{ 	
+			"answer_type" : "single_value_number", 	
+			"question_number" : "2", 	
+			"en_text" : "How old are you?", 	
+			"en_info" : "Milliseconds since Jan 1st 1970",
+			"en_indicator" : "Age" ,	
+			"it_text" : "Quanti anni hai?", 	
+			"it_info" : "Millisecondi dal 1 Gen 1970" 
+		}, 	
+		{ 	
+			"answer_type" : "single_value_boolean", 	
+			"question_number" : "3", 	
+			"en_text" : "Are you rich?", 	
+			"en_info" : "State if you can easily pay the bills", 	
+			"en_indicator" : "Wealth" 
+		},
+		{ 	
+			"answer_type" : "multiple_choice", 	
+			"question_number" : "4", 	
+			"en_text" : "What's your education level?", 	
+			"en_info" : "Determine if a person as a higher education", 	
+			"en_indicator" : "Education Level",
+			"choices" : [
+				{
+					"en_choice_label" : "Illiterate",
+					"it_choice_label" : "Analfabeta",
+					"choice_code" : "0"
+				},
+				{
+					"en_choice_label" : "Primary",
+					"it_choice_label" : "Elementare",
+					"choice_code" : "1"
+				},
+				{
+					"en_choice_label" : "University",
+					"it_choice_label" : "Universita",
+					"choice_code" : "2"
+				}
+			] 
+		} 
+	] 
+},
+ {
+   "_id":"504223e971d8b28f76000001",
+   "en_abstract":"An example for the new JSON",
+   "en_default_language":"en",
+   "en_name":"Multiple Choices",
+   "model_creation_date":"2012-09-01T15:04:09.582Z",
+   "model_date_last_update":"2012-09-01T15:04:09.582Z",
+   "model_questions":[
+      {
+         "answer_type":"multiple_choice",
+         "question_number":"1",
+         "en_text":"What's your name?",
+         "en_info":"People use this word to call you",
+         "en_indicator":"Name",
+         "choices":[
+            {
+               "choice_number":"1",
+               "choice_code":"AZ-01",
+               "ar_choice_label":"Guido",
+               "cn_choice_label":"Guido",
+               "de_choice_label":"Guido",
+               "es_choice_label":"Guido",
+               "en_choice_label":"Guido",
+               "fr_choice_label":"Guido",
+               "in_choice_label":"Guido",
+               "it_choice_label":"Guido",
+               "jp_choice_label":"Guido",
+               "pt_choice_label":"Guido",
+               "ru_choice_label":"Guido"
+            },
+            {
+               "choice_number":"2",
+               "choice_code":"AZ-02",
+               "ar_choice_label":"",
+               "cn_choice_label":"",
+               "de_choice_label":"",
+               "es_choice_label":"",
+               "en_choice_label":"Simone",
+               "fr_choice_label":"",
+               "in_choice_label":"",
+               "it_choice_label":"Simone",
+               "jp_choice_label":"",
+               "pt_choice_label":"",
+               "ru_choice_label":""
+            }
+         ]
+      }
+   ]
+},   { 
+	"_id" : "503a5559e8fc8d384400000d", 
+	"en_abstract" : "And this is its description", 
+	"en_name" : "This is just a test", 
+	"model_creation_date" : "2012-08-26T16:56:57.238Z", 
+	"model_date_last_update" : "2012-08-26T16:56:57.238Z", 
+	"model_default_language" : "en", 
+	"model_questions" : [ 	
+		{ 	
+			"answer_type" : "single_value_text", 	
+			"question_number" : "1", 	
+			"en_text" : "What's your name?", 	
+			"en_info" : "People use it to call you",
+			"en_indicator" : "Name", 	
+			"it_text" : "Come ti chiami?", 	
+			"it_info" : "La gente usa il tuo nome per chiamarti" 
+		}, 	
+		{ 	
+			"answer_type" : "single_value_number", 	
+			"question_number" : "2", 	
+			"en_text" : "How old are you?", 	
+			"en_info" : "Milliseconds since Jan 1st 1970",
+			"en_indicator" : "Age" ,	
+			"it_text" : "Quanti anni hai?", 	
+			"it_info" : "Millisecondi dal 1 Gen 1970" 
+		}, 	
+		{ 	
+			"answer_type" : "single_value_boolean", 	
+			"question_number" : "3", 	
+			"en_text" : "Are you rich?", 	
+			"en_info" : "State if you can easily pay the bills", 	
+			"en_indicator" : "Wealth" 
+		},
+		{ 	
+			"answer_type" : "multiple_choice", 	
+			"question_number" : "4", 	
+			"en_text" : "What's your education level?", 	
+			"en_info" : "Determine if a person as a higher education", 	
+			"en_indicator" : "Education Level",
+			"choices" : [
+				{
+					"en_choice_label" : "Illiterate",
+					"it_choice_label" : "Analfabeta",
+					"choice_code" : "0"
+				},
+				{
+					"en_choice_label" : "Primary",
+					"it_choice_label" : "Elementare",
+					"choice_code" : "1"
+				},
+				{
+					"en_choice_label" : "University",
+					"it_choice_label" : "Universita",
+					"choice_code" : "2"
+				}
+			] 
+		} 
+	] 
+},
+   { 
+	"_id" : "503a5559e8fc8d384400000d", 
+	"en_abstract" : "And this is its description", 
+	"en_name" : "This is just a test", 
+	"model_creation_date" : "2012-08-26T16:56:57.238Z", 
+	"model_date_last_update" : "2012-08-26T16:56:57.238Z", 
+	"model_default_language" : "en", 
+	"model_questions" : [ 	
+		{ 	
+			"answer_type" : "single_value_text", 	
+			"question_number" : "1", 	
+			"en_text" : "What's your name?", 	
+			"en_info" : "People use it to call you",
+			"en_indicator" : "Name", 	
+			"it_text" : "Come ti chiami?", 	
+			"it_info" : "La gente usa il tuo nome per chiamarti" 
+		}, 	
+		{ 	
+			"answer_type" : "single_value_number", 	
+			"question_number" : "2", 	
+			"en_text" : "How old are you?", 	
+			"en_info" : "Milliseconds since Jan 1st 1970",
+			"en_indicator" : "Age" ,	
+			"it_text" : "Quanti anni hai?", 	
+			"it_info" : "Millisecondi dal 1 Gen 1970" 
+		}, 	
+		{ 	
+			"answer_type" : "single_value_boolean", 	
+			"question_number" : "3", 	
+			"en_text" : "Are you rich?", 	
+			"en_info" : "State if you can easily pay the bills", 	
+			"en_indicator" : "Wealth" 
+		},
+		{ 	
+			"answer_type" : "multiple_choice", 	
+			"question_number" : "4", 	
+			"en_text" : "What's your education level?", 	
+			"en_info" : "Determine if a person as a higher education", 	
+			"en_indicator" : "Education Level",
+			"choices" : [
+				{
+					"en_choice_label" : "Illiterate",
+					"it_choice_label" : "Analfabeta",
+					"choice_code" : "0"
+				},
+				{
+					"en_choice_label" : "Primary",
+					"it_choice_label" : "Elementare",
+					"choice_code" : "1"
+				},
+				{
+					"en_choice_label" : "University",
+					"it_choice_label" : "Universita",
+					"choice_code" : "2"
+				}
+			] 
+		} 
+	] 
+},
+   { 
+	"_id" : "503a5559e8fc8d384400000d", 
+	"en_abstract" : "And this is its description", 
+	"en_name" : "This is just a test", 
+	"model_creation_date" : "2012-08-26T16:56:57.238Z", 
+	"model_date_last_update" : "2012-08-26T16:56:57.238Z", 
+	"model_default_language" : "en", 
+	"model_questions" : [ 	
+		{ 	
+			"answer_type" : "single_value_text", 	
+			"question_number" : "1", 	
+			"en_text" : "What's your name?", 	
+			"en_info" : "People use it to call you",
+			"en_indicator" : "Name", 	
+			"it_text" : "Come ti chiami?", 	
+			"it_info" : "La gente usa il tuo nome per chiamarti" 
+		}, 	
+		{ 	
+			"answer_type" : "single_value_number", 	
+			"question_number" : "2", 	
+			"en_text" : "How old are you?", 	
+			"en_info" : "Milliseconds since Jan 1st 1970",
+			"en_indicator" : "Age" ,	
+			"it_text" : "Quanti anni hai?", 	
+			"it_info" : "Millisecondi dal 1 Gen 1970" 
+		}, 	
+		{ 	
+			"answer_type" : "single_value_boolean", 	
+			"question_number" : "3", 	
+			"en_text" : "Are you rich?", 	
+			"en_info" : "State if you can easily pay the bills", 	
+			"en_indicator" : "Wealth" 
+		},
+		{ 	
+			"answer_type" : "multiple_choice", 	
+			"question_number" : "4", 	
+			"en_text" : "What's your education level?", 	
+			"en_info" : "Determine if a person as a higher education", 	
+			"en_indicator" : "Education Level",
+			"choices" : [
+				{
+					"en_choice_label" : "Illiterate",
+					"it_choice_label" : "Analfabeta",
+					"choice_code" : "0"
+				},
+				{
+					"en_choice_label" : "Primary",
+					"it_choice_label" : "Elementare",
+					"choice_code" : "1"
+				},
+				{
+					"en_choice_label" : "University",
+					"it_choice_label" : "Universita",
+					"choice_code" : "2"
+				}
+			] 
+		} 
+	] 
+},
+   { 
+	"_id" : "503a5559e8fc8d384400000d", 
+	"en_abstract" : "And this is its description", 
+	"en_name" : "This is just a test", 
+	"model_creation_date" : "2012-08-26T16:56:57.238Z", 
+	"model_date_last_update" : "2012-08-26T16:56:57.238Z", 
+	"model_default_language" : "en", 
+	"model_questions" : [ 	
+		{ 	
+			"answer_type" : "single_value_text", 	
+			"question_number" : "1", 	
+			"en_text" : "What's your name?", 	
+			"en_info" : "People use it to call you",
+			"en_indicator" : "Name", 	
+			"it_text" : "Come ti chiami?", 	
+			"it_info" : "La gente usa il tuo nome per chiamarti" 
+		}, 	
+		{ 	
+			"answer_type" : "single_value_number", 	
+			"question_number" : "2", 	
+			"en_text" : "How old are you?", 	
+			"en_info" : "Milliseconds since Jan 1st 1970",
+			"en_indicator" : "Age" ,	
+			"it_text" : "Quanti anni hai?", 	
+			"it_info" : "Millisecondi dal 1 Gen 1970" 
+		}, 	
+		{ 	
+			"answer_type" : "single_value_boolean", 	
+			"question_number" : "3", 	
+			"en_text" : "Are you rich?", 	
+			"en_info" : "State if you can easily pay the bills", 	
+			"en_indicator" : "Wealth" 
+		},
+		{ 	
+			"answer_type" : "multiple_choice", 	
+			"question_number" : "4", 	
+			"en_text" : "What's your education level?", 	
+			"en_info" : "Determine if a person as a higher education", 	
+			"en_indicator" : "Education Level",
+			"choices" : [
+				{
+					"en_choice_label" : "Illiterate",
+					"it_choice_label" : "Analfabeta",
+					"choice_code" : "0"
+				},
+				{
+					"en_choice_label" : "Primary",
+					"it_choice_label" : "Elementare",
+					"choice_code" : "1"
+				},
+				{
+					"en_choice_label" : "University",
+					"it_choice_label" : "Universita",
+					"choice_code" : "2"
+				}
+			] 
+		} 
+	] 
+},
+   { 
+	"_id" : "503a5559e8fc8d384400000d", 
+	"en_abstract" : "And this is its description", 
+	"en_name" : "This is just a test", 
+	"model_creation_date" : "2012-08-26T16:56:57.238Z", 
+	"model_date_last_update" : "2012-08-26T16:56:57.238Z", 
+	"model_default_language" : "en", 
+	"model_questions" : [ 	
+		{ 	
+			"answer_type" : "single_value_text", 	
+			"question_number" : "1", 	
+			"en_text" : "What's your name?", 	
+			"en_info" : "People use it to call you",
+			"en_indicator" : "Name", 	
+			"it_text" : "Come ti chiami?", 	
+			"it_info" : "La gente usa il tuo nome per chiamarti" 
+		}, 	
+		{ 	
+			"answer_type" : "single_value_number", 	
+			"question_number" : "2", 	
+			"en_text" : "How old are you?", 	
+			"en_info" : "Milliseconds since Jan 1st 1970",
+			"en_indicator" : "Age" ,	
+			"it_text" : "Quanti anni hai?", 	
+			"it_info" : "Millisecondi dal 1 Gen 1970" 
+		}, 	
+		{ 	
+			"answer_type" : "single_value_boolean", 	
+			"question_number" : "3", 	
+			"en_text" : "Are you rich?", 	
+			"en_info" : "State if you can easily pay the bills", 	
+			"en_indicator" : "Wealth" 
+		},
+		{ 	
+			"answer_type" : "multiple_choice", 	
+			"question_number" : "4", 	
+			"en_text" : "What's your education level?", 	
+			"en_info" : "Determine if a person as a higher education", 	
+			"en_indicator" : "Education Level",
+			"choices" : [
+				{
+					"en_choice_label" : "Illiterate",
+					"it_choice_label" : "Analfabeta",
+					"choice_code" : "0"
+				},
+				{
+					"en_choice_label" : "Primary",
+					"it_choice_label" : "Elementare",
+					"choice_code" : "1"
+				},
+				{
+					"en_choice_label" : "University",
+					"it_choice_label" : "Universita",
+					"choice_code" : "2"
+				}
+			] 
+		} 
+	] 
+},
+ {
+   "_id":"504223e971d8b28f76000001",
+   "en_abstract":"An example for the new JSON",
+   "en_default_language":"en",
+   "en_name":"Multiple Choices",
+   "model_creation_date":"2012-09-01T15:04:09.582Z",
+   "model_date_last_update":"2012-09-01T15:04:09.582Z",
+   "model_questions":[
+      {
+         "answer_type":"multiple_choice",
+         "question_number":"1",
+         "en_text":"What's your name?",
+         "en_info":"People use this word to call you",
+         "en_indicator":"Name",
+         "choices":[
+            {
+               "choice_number":"1",
+               "choice_code":"AZ-01",
+               "ar_choice_label":"Guido",
+               "cn_choice_label":"Guido",
+               "de_choice_label":"Guido",
+               "es_choice_label":"Guido",
+               "en_choice_label":"Guido",
+               "fr_choice_label":"Guido",
+               "in_choice_label":"Guido",
+               "it_choice_label":"Guido",
+               "jp_choice_label":"Guido",
+               "pt_choice_label":"Guido",
+               "ru_choice_label":"Guido"
+            },
+            {
+               "choice_number":"2",
+               "choice_code":"AZ-02",
+               "ar_choice_label":"",
+               "cn_choice_label":"",
+               "de_choice_label":"",
+               "es_choice_label":"",
+               "en_choice_label":"Simone",
+               "fr_choice_label":"",
+               "in_choice_label":"",
+               "it_choice_label":"Simone",
+               "jp_choice_label":"",
+               "pt_choice_label":"",
+               "ru_choice_label":""
+            }
+         ]
+      }
+   ]
+},   { 
+	"_id" : "503a5559e8fc8d384400000d", 
+	"en_abstract" : "And this is its description", 
+	"en_name" : "This is just a test", 
+	"model_creation_date" : "2012-08-26T16:56:57.238Z", 
+	"model_date_last_update" : "2012-08-26T16:56:57.238Z", 
+	"model_default_language" : "en", 
+	"model_questions" : [ 	
+		{ 	
+			"answer_type" : "single_value_text", 	
+			"question_number" : "1", 	
+			"en_text" : "What's your name?", 	
+			"en_info" : "People use it to call you",
+			"en_indicator" : "Name", 	
+			"it_text" : "Come ti chiami?", 	
+			"it_info" : "La gente usa il tuo nome per chiamarti" 
+		}, 	
+		{ 	
+			"answer_type" : "single_value_number", 	
+			"question_number" : "2", 	
+			"en_text" : "How old are you?", 	
+			"en_info" : "Milliseconds since Jan 1st 1970",
+			"en_indicator" : "Age" ,	
+			"it_text" : "Quanti anni hai?", 	
+			"it_info" : "Millisecondi dal 1 Gen 1970" 
+		}, 	
+		{ 	
+			"answer_type" : "single_value_boolean", 	
+			"question_number" : "3", 	
+			"en_text" : "Are you rich?", 	
+			"en_info" : "State if you can easily pay the bills", 	
+			"en_indicator" : "Wealth" 
+		},
+		{ 	
+			"answer_type" : "multiple_choice", 	
+			"question_number" : "4", 	
+			"en_text" : "What's your education level?", 	
+			"en_info" : "Determine if a person as a higher education", 	
+			"en_indicator" : "Education Level",
+			"choices" : [
+				{
+					"en_choice_label" : "Illiterate",
+					"it_choice_label" : "Analfabeta",
+					"choice_code" : "0"
+				},
+				{
+					"en_choice_label" : "Primary",
+					"it_choice_label" : "Elementare",
+					"choice_code" : "1"
+				},
+				{
+					"en_choice_label" : "University",
+					"it_choice_label" : "Universita",
+					"choice_code" : "2"
+				}
+			] 
+		} 
+	] 
+},
+   { 
+	"_id" : "503a5559e8fc8d384400000d", 
+	"en_abstract" : "And this is its description", 
+	"en_name" : "This is just a test", 
+	"model_creation_date" : "2012-08-26T16:56:57.238Z", 
+	"model_date_last_update" : "2012-08-26T16:56:57.238Z", 
+	"model_default_language" : "en", 
+	"model_questions" : [ 	
+		{ 	
+			"answer_type" : "single_value_text", 	
+			"question_number" : "1", 	
+			"en_text" : "What's your name?", 	
+			"en_info" : "People use it to call you",
+			"en_indicator" : "Name", 	
+			"it_text" : "Come ti chiami?", 	
+			"it_info" : "La gente usa il tuo nome per chiamarti" 
+		}, 	
+		{ 	
+			"answer_type" : "single_value_number", 	
+			"question_number" : "2", 	
+			"en_text" : "How old are you?", 	
+			"en_info" : "Milliseconds since Jan 1st 1970",
+			"en_indicator" : "Age" ,	
+			"it_text" : "Quanti anni hai?", 	
+			"it_info" : "Millisecondi dal 1 Gen 1970" 
+		}, 	
+		{ 	
+			"answer_type" : "single_value_boolean", 	
+			"question_number" : "3", 	
+			"en_text" : "Are you rich?", 	
+			"en_info" : "State if you can easily pay the bills", 	
+			"en_indicator" : "Wealth" 
+		},
+		{ 	
+			"answer_type" : "multiple_choice", 	
+			"question_number" : "4", 	
+			"en_text" : "What's your education level?", 	
+			"en_info" : "Determine if a person as a higher education", 	
+			"en_indicator" : "Education Level",
+			"choices" : [
+				{
+					"en_choice_label" : "Illiterate",
+					"it_choice_label" : "Analfabeta",
+					"choice_code" : "0"
+				},
+				{
+					"en_choice_label" : "Primary",
+					"it_choice_label" : "Elementare",
+					"choice_code" : "1"
+				},
+				{
+					"en_choice_label" : "University",
+					"it_choice_label" : "Universita",
+					"choice_code" : "2"
+				}
+			] 
+		} 
+	] 
+},
+   { 
+	"_id" : "503a5559e8fc8d384400000d", 
+	"en_abstract" : "And this is its description", 
+	"en_name" : "This is just a test", 
+	"model_creation_date" : "2012-08-26T16:56:57.238Z", 
+	"model_date_last_update" : "2012-08-26T16:56:57.238Z", 
+	"model_default_language" : "en", 
+	"model_questions" : [ 	
+		{ 	
+			"answer_type" : "single_value_text", 	
+			"question_number" : "1", 	
+			"en_text" : "What's your name?", 	
+			"en_info" : "People use it to call you",
+			"en_indicator" : "Name", 	
+			"it_text" : "Come ti chiami?", 	
+			"it_info" : "La gente usa il tuo nome per chiamarti" 
+		}, 	
+		{ 	
+			"answer_type" : "single_value_number", 	
+			"question_number" : "2", 	
+			"en_text" : "How old are you?", 	
+			"en_info" : "Milliseconds since Jan 1st 1970",
+			"en_indicator" : "Age" ,	
+			"it_text" : "Quanti anni hai?", 	
+			"it_info" : "Millisecondi dal 1 Gen 1970" 
+		}, 	
+		{ 	
+			"answer_type" : "single_value_boolean", 	
+			"question_number" : "3", 	
+			"en_text" : "Are you rich?", 	
+			"en_info" : "State if you can easily pay the bills", 	
+			"en_indicator" : "Wealth" 
+		},
+		{ 	
+			"answer_type" : "multiple_choice", 	
+			"question_number" : "4", 	
+			"en_text" : "What's your education level?", 	
+			"en_info" : "Determine if a person as a higher education", 	
+			"en_indicator" : "Education Level",
+			"choices" : [
+				{
+					"en_choice_label" : "Illiterate",
+					"it_choice_label" : "Analfabeta",
+					"choice_code" : "0"
+				},
+				{
+					"en_choice_label" : "Primary",
+					"it_choice_label" : "Elementare",
+					"choice_code" : "1"
+				},
+				{
+					"en_choice_label" : "University",
+					"it_choice_label" : "Universita",
+					"choice_code" : "2"
+				}
+			] 
+		} 
+	] 
+},
+   { 
+	"_id" : "503a5559e8fc8d384400000d", 
+	"en_abstract" : "And this is its description", 
+	"en_name" : "This is just a test", 
+	"model_creation_date" : "2012-08-26T16:56:57.238Z", 
+	"model_date_last_update" : "2012-08-26T16:56:57.238Z", 
+	"model_default_language" : "en", 
+	"model_questions" : [ 	
+		{ 	
+			"answer_type" : "single_value_text", 	
+			"question_number" : "1", 	
+			"en_text" : "What's your name?", 	
+			"en_info" : "People use it to call you",
+			"en_indicator" : "Name", 	
+			"it_text" : "Come ti chiami?", 	
+			"it_info" : "La gente usa il tuo nome per chiamarti" 
+		}, 	
+		{ 	
+			"answer_type" : "single_value_number", 	
+			"question_number" : "2", 	
+			"en_text" : "How old are you?", 	
+			"en_info" : "Milliseconds since Jan 1st 1970",
+			"en_indicator" : "Age" ,	
+			"it_text" : "Quanti anni hai?", 	
+			"it_info" : "Millisecondi dal 1 Gen 1970" 
+		}, 	
+		{ 	
+			"answer_type" : "single_value_boolean", 	
+			"question_number" : "3", 	
+			"en_text" : "Are you rich?", 	
+			"en_info" : "State if you can easily pay the bills", 	
+			"en_indicator" : "Wealth" 
+		},
+		{ 	
+			"answer_type" : "multiple_choice", 	
+			"question_number" : "4", 	
+			"en_text" : "What's your education level?", 	
+			"en_info" : "Determine if a person as a higher education", 	
+			"en_indicator" : "Education Level",
+			"choices" : [
+				{
+					"en_choice_label" : "Illiterate",
+					"it_choice_label" : "Analfabeta",
+					"choice_code" : "0"
+				},
+				{
+					"en_choice_label" : "Primary",
+					"it_choice_label" : "Elementare",
+					"choice_code" : "1"
+				},
+				{
+					"en_choice_label" : "University",
+					"it_choice_label" : "Universita",
+					"choice_code" : "2"
+				}
+			] 
+		} 
+	] 
+},
+   { 
+	"_id" : "503a5559e8fc8d384400000d", 
+	"en_abstract" : "And this is its description", 
+	"en_name" : "This is just a test", 
+	"model_creation_date" : "2012-08-26T16:56:57.238Z", 
+	"model_date_last_update" : "2012-08-26T16:56:57.238Z", 
+	"model_default_language" : "en", 
+	"model_questions" : [ 	
+		{ 	
+			"answer_type" : "single_value_text", 	
+			"question_number" : "1", 	
+			"en_text" : "What's your name?", 	
+			"en_info" : "People use it to call you",
+			"en_indicator" : "Name", 	
+			"it_text" : "Come ti chiami?", 	
+			"it_info" : "La gente usa il tuo nome per chiamarti" 
+		}, 	
+		{ 	
+			"answer_type" : "single_value_number", 	
+			"question_number" : "2", 	
+			"en_text" : "How old are you?", 	
+			"en_info" : "Milliseconds since Jan 1st 1970",
+			"en_indicator" : "Age" ,	
+			"it_text" : "Quanti anni hai?", 	
+			"it_info" : "Millisecondi dal 1 Gen 1970" 
+		}, 	
+		{ 	
+			"answer_type" : "single_value_boolean", 	
+			"question_number" : "3", 	
+			"en_text" : "Are you rich?", 	
+			"en_info" : "State if you can easily pay the bills", 	
+			"en_indicator" : "Wealth" 
+		},
+		{ 	
+			"answer_type" : "multiple_choice", 	
+			"question_number" : "4", 	
+			"en_text" : "What's your education level?", 	
+			"en_info" : "Determine if a person as a higher education", 	
+			"en_indicator" : "Education Level",
+			"choices" : [
+				{
+					"en_choice_label" : "Illiterate",
+					"it_choice_label" : "Analfabeta",
+					"choice_code" : "0"
+				},
+				{
+					"en_choice_label" : "Primary",
+					"it_choice_label" : "Elementare",
+					"choice_code" : "1"
+				},
+				{
+					"en_choice_label" : "University",
+					"it_choice_label" : "Universita",
+					"choice_code" : "2"
+				}
+			] 
+		} 
+	] 
+},
+ {
+   "_id":"504223e971d8b28f76000001",
+   "en_abstract":"An example for the new JSON",
+   "en_default_language":"en",
+   "en_name":"Multiple Choices",
+   "model_creation_date":"2012-09-01T15:04:09.582Z",
+   "model_date_last_update":"2012-09-01T15:04:09.582Z",
+   "model_questions":[
+      {
+         "answer_type":"multiple_choice",
+         "question_number":"1",
+         "en_text":"What's your name?",
+         "en_info":"People use this word to call you",
+         "en_indicator":"Name",
+         "choices":[
+            {
+               "choice_number":"1",
+               "choice_code":"AZ-01",
+               "ar_choice_label":"Guido",
+               "cn_choice_label":"Guido",
+               "de_choice_label":"Guido",
+               "es_choice_label":"Guido",
+               "en_choice_label":"Guido",
+               "fr_choice_label":"Guido",
+               "in_choice_label":"Guido",
+               "it_choice_label":"Guido",
+               "jp_choice_label":"Guido",
+               "pt_choice_label":"Guido",
+               "ru_choice_label":"Guido"
+            },
+            {
+               "choice_number":"2",
+               "choice_code":"AZ-02",
+               "ar_choice_label":"",
+               "cn_choice_label":"",
+               "de_choice_label":"",
+               "es_choice_label":"",
+               "en_choice_label":"Simone",
+               "fr_choice_label":"",
+               "in_choice_label":"",
+               "it_choice_label":"Simone",
+               "jp_choice_label":"",
+               "pt_choice_label":"",
+               "ru_choice_label":""
+            }
+         ]
+      }
+   ]
+},   { 
+	"_id" : "503a5559e8fc8d384400000d", 
+	"en_abstract" : "And this is its description", 
+	"en_name" : "This is just a test", 
+	"model_creation_date" : "2012-08-26T16:56:57.238Z", 
+	"model_date_last_update" : "2012-08-26T16:56:57.238Z", 
+	"model_default_language" : "en", 
+	"model_questions" : [ 	
+		{ 	
+			"answer_type" : "single_value_text", 	
+			"question_number" : "1", 	
+			"en_text" : "What's your name?", 	
+			"en_info" : "People use it to call you",
+			"en_indicator" : "Name", 	
+			"it_text" : "Come ti chiami?", 	
+			"it_info" : "La gente usa il tuo nome per chiamarti" 
+		}, 	
+		{ 	
+			"answer_type" : "single_value_number", 	
+			"question_number" : "2", 	
+			"en_text" : "How old are you?", 	
+			"en_info" : "Milliseconds since Jan 1st 1970",
+			"en_indicator" : "Age" ,	
+			"it_text" : "Quanti anni hai?", 	
+			"it_info" : "Millisecondi dal 1 Gen 1970" 
+		}, 	
+		{ 	
+			"answer_type" : "single_value_boolean", 	
+			"question_number" : "3", 	
+			"en_text" : "Are you rich?", 	
+			"en_info" : "State if you can easily pay the bills", 	
+			"en_indicator" : "Wealth" 
+		},
+		{ 	
+			"answer_type" : "multiple_choice", 	
+			"question_number" : "4", 	
+			"en_text" : "What's your education level?", 	
+			"en_info" : "Determine if a person as a higher education", 	
+			"en_indicator" : "Education Level",
+			"choices" : [
+				{
+					"en_choice_label" : "Illiterate",
+					"it_choice_label" : "Analfabeta",
+					"choice_code" : "0"
+				},
+				{
+					"en_choice_label" : "Primary",
+					"it_choice_label" : "Elementare",
+					"choice_code" : "1"
+				},
+				{
+					"en_choice_label" : "University",
+					"it_choice_label" : "Universita",
+					"choice_code" : "2"
+				}
+			] 
+		} 
+	] 
+},
+   { 
+	"_id" : "503a5559e8fc8d384400000d", 
+	"en_abstract" : "And this is its description", 
+	"en_name" : "This is just a test", 
+	"model_creation_date" : "2012-08-26T16:56:57.238Z", 
+	"model_date_last_update" : "2012-08-26T16:56:57.238Z", 
+	"model_default_language" : "en", 
+	"model_questions" : [ 	
+		{ 	
+			"answer_type" : "single_value_text", 	
+			"question_number" : "1", 	
+			"en_text" : "What's your name?", 	
+			"en_info" : "People use it to call you",
+			"en_indicator" : "Name", 	
+			"it_text" : "Come ti chiami?", 	
+			"it_info" : "La gente usa il tuo nome per chiamarti" 
+		}, 	
+		{ 	
+			"answer_type" : "single_value_number", 	
+			"question_number" : "2", 	
+			"en_text" : "How old are you?", 	
+			"en_info" : "Milliseconds since Jan 1st 1970",
+			"en_indicator" : "Age" ,	
+			"it_text" : "Quanti anni hai?", 	
+			"it_info" : "Millisecondi dal 1 Gen 1970" 
+		}, 	
+		{ 	
+			"answer_type" : "single_value_boolean", 	
+			"question_number" : "3", 	
+			"en_text" : "Are you rich?", 	
+			"en_info" : "State if you can easily pay the bills", 	
+			"en_indicator" : "Wealth" 
+		},
+		{ 	
+			"answer_type" : "multiple_choice", 	
+			"question_number" : "4", 	
+			"en_text" : "What's your education level?", 	
+			"en_info" : "Determine if a person as a higher education", 	
+			"en_indicator" : "Education Level",
+			"choices" : [
+				{
+					"en_choice_label" : "Illiterate",
+					"it_choice_label" : "Analfabeta",
+					"choice_code" : "0"
+				},
+				{
+					"en_choice_label" : "Primary",
+					"it_choice_label" : "Elementare",
+					"choice_code" : "1"
+				},
+				{
+					"en_choice_label" : "University",
+					"it_choice_label" : "Universita",
+					"choice_code" : "2"
+				}
+			] 
+		} 
+	] 
+},
+   { 
+	"_id" : "503a5559e8fc8d384400000d", 
+	"en_abstract" : "And this is its description", 
+	"en_name" : "This is just a test", 
+	"model_creation_date" : "2012-08-26T16:56:57.238Z", 
+	"model_date_last_update" : "2012-08-26T16:56:57.238Z", 
+	"model_default_language" : "en", 
+	"model_questions" : [ 	
+		{ 	
+			"answer_type" : "single_value_text", 	
+			"question_number" : "1", 	
+			"en_text" : "What's your name?", 	
+			"en_info" : "People use it to call you",
+			"en_indicator" : "Name", 	
+			"it_text" : "Come ti chiami?", 	
+			"it_info" : "La gente usa il tuo nome per chiamarti" 
+		}, 	
+		{ 	
+			"answer_type" : "single_value_number", 	
+			"question_number" : "2", 	
+			"en_text" : "How old are you?", 	
+			"en_info" : "Milliseconds since Jan 1st 1970",
+			"en_indicator" : "Age" ,	
+			"it_text" : "Quanti anni hai?", 	
+			"it_info" : "Millisecondi dal 1 Gen 1970" 
+		}, 	
+		{ 	
+			"answer_type" : "single_value_boolean", 	
+			"question_number" : "3", 	
+			"en_text" : "Are you rich?", 	
+			"en_info" : "State if you can easily pay the bills", 	
+			"en_indicator" : "Wealth" 
+		},
+		{ 	
+			"answer_type" : "multiple_choice", 	
+			"question_number" : "4", 	
+			"en_text" : "What's your education level?", 	
+			"en_info" : "Determine if a person as a higher education", 	
+			"en_indicator" : "Education Level",
+			"choices" : [
+				{
+					"en_choice_label" : "Illiterate",
+					"it_choice_label" : "Analfabeta",
+					"choice_code" : "0"
+				},
+				{
+					"en_choice_label" : "Primary",
+					"it_choice_label" : "Elementare",
+					"choice_code" : "1"
+				},
+				{
+					"en_choice_label" : "University",
+					"it_choice_label" : "Universita",
+					"choice_code" : "2"
+				}
+			] 
+		} 
+	] 
+},
+   { 
+	"_id" : "503a5559e8fc8d384400000d", 
+	"en_abstract" : "And this is its description", 
+	"en_name" : "This is just a test", 
+	"model_creation_date" : "2012-08-26T16:56:57.238Z", 
+	"model_date_last_update" : "2012-08-26T16:56:57.238Z", 
+	"model_default_language" : "en", 
+	"model_questions" : [ 	
+		{ 	
+			"answer_type" : "single_value_text", 	
+			"question_number" : "1", 	
+			"en_text" : "What's your name?", 	
+			"en_info" : "People use it to call you",
+			"en_indicator" : "Name", 	
+			"it_text" : "Come ti chiami?", 	
+			"it_info" : "La gente usa il tuo nome per chiamarti" 
+		}, 	
+		{ 	
+			"answer_type" : "single_value_number", 	
+			"question_number" : "2", 	
+			"en_text" : "How old are you?", 	
+			"en_info" : "Milliseconds since Jan 1st 1970",
+			"en_indicator" : "Age" ,	
+			"it_text" : "Quanti anni hai?", 	
+			"it_info" : "Millisecondi dal 1 Gen 1970" 
+		}, 	
+		{ 	
+			"answer_type" : "single_value_boolean", 	
+			"question_number" : "3", 	
+			"en_text" : "Are you rich?", 	
+			"en_info" : "State if you can easily pay the bills", 	
+			"en_indicator" : "Wealth" 
+		},
+		{ 	
+			"answer_type" : "multiple_choice", 	
+			"question_number" : "4", 	
+			"en_text" : "What's your education level?", 	
+			"en_info" : "Determine if a person as a higher education", 	
+			"en_indicator" : "Education Level",
+			"choices" : [
+				{
+					"en_choice_label" : "Illiterate",
+					"it_choice_label" : "Analfabeta",
+					"choice_code" : "0"
+				},
+				{
+					"en_choice_label" : "Primary",
+					"it_choice_label" : "Elementare",
+					"choice_code" : "1"
+				},
+				{
+					"en_choice_label" : "University",
+					"it_choice_label" : "Universita",
+					"choice_code" : "2"
+				}
+			] 
+		} 
+	] 
+},
+   { 
+	"_id" : "503a5559e8fc8d384400000d", 
+	"en_abstract" : "And this is its description", 
+	"en_name" : "This is just a test", 
+	"model_creation_date" : "2012-08-26T16:56:57.238Z", 
+	"model_date_last_update" : "2012-08-26T16:56:57.238Z", 
+	"model_default_language" : "en", 
+	"model_questions" : [ 	
+		{ 	
+			"answer_type" : "single_value_text", 	
+			"question_number" : "1", 	
+			"en_text" : "What's your name?", 	
+			"en_info" : "People use it to call you",
+			"en_indicator" : "Name", 	
+			"it_text" : "Come ti chiami?", 	
+			"it_info" : "La gente usa il tuo nome per chiamarti" 
+		}, 	
+		{ 	
+			"answer_type" : "single_value_number", 	
+			"question_number" : "2", 	
+			"en_text" : "How old are you?", 	
+			"en_info" : "Milliseconds since Jan 1st 1970",
+			"en_indicator" : "Age" ,	
+			"it_text" : "Quanti anni hai?", 	
+			"it_info" : "Millisecondi dal 1 Gen 1970" 
+		}, 	
+		{ 	
+			"answer_type" : "single_value_boolean", 	
+			"question_number" : "3", 	
+			"en_text" : "Are you rich?", 	
+			"en_info" : "State if you can easily pay the bills", 	
+			"en_indicator" : "Wealth" 
+		},
+		{ 	
+			"answer_type" : "multiple_choice", 	
+			"question_number" : "4", 	
+			"en_text" : "What's your education level?", 	
+			"en_info" : "Determine if a person as a higher education", 	
+			"en_indicator" : "Education Level",
+			"choices" : [
+				{
+					"en_choice_label" : "Illiterate",
+					"it_choice_label" : "Analfabeta",
+					"choice_code" : "0"
+				},
+				{
+					"en_choice_label" : "Primary",
+					"it_choice_label" : "Elementare",
+					"choice_code" : "1"
+				},
+				{
+					"en_choice_label" : "University",
+					"it_choice_label" : "Universita",
+					"choice_code" : "2"
+				}
+			] 
+		} 
+	] 
 }
 ]

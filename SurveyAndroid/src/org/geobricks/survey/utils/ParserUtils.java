@@ -154,7 +154,7 @@ public class ParserUtils {
 				switch (c) {
 					case QUESTION_NUMBER: question.setNumber(map.get(key)); break;
 					case ANSWER_TYPE: Log.i("JSON", map.get(key).toUpperCase()); question.setType(ANSWERTYPE.valueOf(map.get(key).toUpperCase())); break;
-					case CHOICES: question.getAnswerChoicesBean().setChoices(getChoices(map.get(key), language)); break;
+					case CHOICES: question.getChoicesBean().setChoices(getChoices(map.get(key), language)); break;
 					default: break;
 			}
 			}catch(Exception e ) {}

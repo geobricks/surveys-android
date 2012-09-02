@@ -30,7 +30,8 @@ public class SurveysListviewActivity extends Activity {
         setContentView(R.layout.listview);
         
         // TODO: should be read dinamically somewhere (DB or webservice)
-		String json = Utils.readFile(this, R.raw.survey_list_large);
+//		String json = Utils.readFile(this, R.raw.survey_list_large);
+		String json = Utils.readFile(this, R.raw.survey_list_2);
 		List<SurveyBean> surveys = ParserUtils.parseJSONSurveysList(this, json);
         
         SurveyListModel data[] = new SurveyListModel[surveys.size()];

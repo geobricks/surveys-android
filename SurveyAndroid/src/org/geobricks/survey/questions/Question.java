@@ -37,6 +37,8 @@ public class Question extends Fragment {
 	
 	QuestionValue questionValue;
 	
+	boolean detach = false;
+	
 // 	int spinner_layout = android.R.layout.simple_spinner_item;
 
 	
@@ -187,11 +189,11 @@ public class Question extends Fragment {
 					break;
 				case SINGLE_CHOICE:
 					questionValue = new QuestionSpinner(getActivity());
-					((QuestionSpinner) questionValue).build(null, qb.getAnswerChoicesBean().getChoices());
+					((QuestionSpinner) questionValue).build(null, qb.getChoicesBean().getChoices());
 					break;
 				case MULTIPLE_CHOICE:
 					questionValue = new QuestionMultiselection(getActivity());
-					((QuestionMultiselection) questionValue).build(qb.getAnswerChoicesBean().getChoices());
+					((QuestionMultiselection) questionValue).build(qb.getChoicesBean().getChoices());
 					break;
 		
 				default: break;
@@ -202,20 +204,21 @@ public class Question extends Fragment {
 		}
 		return panel;
 	}
-	
 
-	// public void build() {
-	//
-	// View text =
-	// this.container.addView(child);
-	// }
-	// //
-	// public LinearLayout getPanel() {
-	// return panel;
-	// }
-	//
-	// public void setPanel(LinearLayout panel) {
-	// this.panel = panel;
-	// }
+	public QuestionValue getQuestionValue() {
+		return questionValue;
+	}
+	
+	
+	// WORKAROUND: google bux fix
+	@Override
+	public void onSaveInstanceState(Bundle outState) {
+		super.onSaveInstanceState(outState);
+		if (outState.isEmpty()) {
+			outState.putBoolean("bug:fix", true);
+		}
+	}
+
+	
 
 }

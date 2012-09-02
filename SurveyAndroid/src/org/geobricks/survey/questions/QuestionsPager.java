@@ -4,12 +4,14 @@ import java.util.List;
 import java.util.Vector;
 
 import org.geobricks.survey.R;
+import org.geobricks.survey.StartUpActivity;
 import org.geobricks.survey.bean.QuestionBean;
 import org.geobricks.survey.bean.SurveyBean;
-import org.geobricks.survey.bean.SurveyBeanSerializable;
-import org.geobricks.survey.constants.CONSTANTS;
+import org.geobricks.survey.constants.LOG;
+import org.geobricks.survey.surveyslist.SurveysListviewActivity;
 import org.geobricks.survey.utils.Utils;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
@@ -28,9 +30,13 @@ public class QuestionsPager extends FragmentActivity {
 	
 		ViewPager pager;
 		
+		List<Question> questionFragments;
+		
 		Button nextButton;
 		
 		Button backButton;
+		
+		Button summaryButton;
 
 		SurveyBean surveyBean;
 		
@@ -55,7 +61,17 @@ public class QuestionsPager extends FragmentActivity {
 			this.surveyBean = surveyBean;
 		}
 
-
+		@Override
+		public void onResume() {
+			super.onResume();
+			Log.i(LOG.PAGER.toString(), "onResume");
+		}
+		
+		@Override
+		public void onPause() {
+			super.onResume();
+			Log.i(LOG.PAGER.toString(), "onPause");
+		}
 
 		/* (non-Javadoc)
 		 * @see android.support.v4.app.FragmentActivity#onCreate(android.os.Bundle)
@@ -121,7 +137,7 @@ public class QuestionsPager extends FragmentActivity {
 		 */
 		private void initialisePaging() {
 
-			List<Question> fragments = new Vector<Question>();
+			questionFragments = new Vector<Question>();
 //			SurveyBean surveyBean = ParserUtils.parseJSON(this, json);
 			
 			Log.i("initialisePaging", "here");
@@ -134,12 +150,15 @@ public class QuestionsPager extends FragmentActivity {
 			int i = 1;
 			for(QuestionBean question : sb.getQuestions()) {
 				question.setNumber(String.valueOf(i)); // TODO; it was a test
-				fragments.add((Question) Question.newInstance(question));
+				questionFragments.add((Question) Question.newInstance(question));
 				i++;
 			}
+			// Adding the Summary Fragment (FAKE)
+			questionFragments.add((Summary) Summary.newInstance(new QuestionBean()));
+			questionFragments.add((Summary) Summary.newInstance(new QuestionBean()));
 
-			this.mPagerAdapter  = new QuestionsPagerAdapter(super.getSupportFragmentManager(), fragments);
 			pager = (ViewPager) super.findViewById(R.id.viewpager);
+			this.mPagerAdapter  = new QuestionsPagerAdapter(pager, super.getSupportFragmentManager(), questionFragments);
 			pager.setAdapter(this.mPagerAdapter);
 			
 			DisplayMetrics displaymetrics = new DisplayMetrics();
@@ -158,8 +177,9 @@ public class QuestionsPager extends FragmentActivity {
 		    backButton = (Button) findViewById(R.id.back);
 		    backButton.setOnClickListener(new ChangePageHandler());
 		    backButton.setId(R.string.back);
-		    
-		    
+		    summaryButton = (Button) findViewById(R.id.summary);
+		    summaryButton.setOnClickListener(new SummaryHandler());
+		    summaryButton.setId(R.string.summary);
 		}
 		
 	    public class ChangePageHandler implements View.OnClickListener {
@@ -172,10 +192,34 @@ public class QuestionsPager extends FragmentActivity {
 					case R.string.back: pos--; break;
 					case R.string.next: pos++; break;
 				}
-				pager.setCurrentItem(pos, true);
+				changePage(pos);
+			}
+		}
+	    
+	    public void changePage(int pos) {
+	    	pager.setCurrentItem(pos, true);
+	    }
+	    
+	    
+	    public class SummaryHandler implements View.OnClickListener {
+			public void onClick( View view ) {
+				Log.i("SummaryHandler", "");
+				
+//				Intent intent = new Intent().setClass(getBaseContext(), StartUpActivity.class);
+//				startActivity(intent);
+				
+				pager.setCurrentItem(questionFragments.size()-1, false);
 			}
 		}
 
+
+		public List<Question> getQuestionFragments() {
+			return questionFragments;
+		}
+
+		public QuestionsPagerAdapter getmPagerAdapter() {
+			return mPagerAdapter;
+		}
 	}
 
 

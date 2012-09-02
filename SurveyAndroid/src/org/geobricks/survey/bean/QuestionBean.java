@@ -21,9 +21,7 @@ public class QuestionBean implements Serializable {
 	
 	ANSWERTYPE type;
 	
-	AnswerChoicesBean answerChoicesBean = new AnswerChoicesBean();
-	
-	String result = "";
+	ChoicesBean choicesBean = new ChoicesBean();
 
 	public String getNumber() {
 		return number;
@@ -60,14 +58,6 @@ public class QuestionBean implements Serializable {
 		this.title = title;
 	}
 
-	public String getResult() {
-		return result;
-	}
-
-	public void setResult(String result) {
-		this.result = result;
-	}
-
 	public String getInfo() {
 		return info;
 	}
@@ -76,12 +66,12 @@ public class QuestionBean implements Serializable {
 		this.info = info;
 	}
 
-	public AnswerChoicesBean getAnswerChoicesBean() {
-		return answerChoicesBean;
+	public ChoicesBean getChoicesBean() {
+		return choicesBean;
 	}
 
-	public void setAnswerChoicesBean(AnswerChoicesBean answerChoicesBean) {
-		this.answerChoicesBean = answerChoicesBean;
+	public void setChoicesBean(ChoicesBean choicesBean) {
+		this.choicesBean = choicesBean;
 	}
 	
 	
