@@ -5,7 +5,9 @@ import java.util.List;
 
 import org.geobricks.survey.R;
 import org.geobricks.survey.bean.AnswerBean;
+import org.geobricks.survey.bean.SurveyBean;
 import org.geobricks.survey.questions.QuestionsPager;
+import org.geobricks.survey.utils.AnswerUtils;
 import org.geobricks.survey.utils.Data;
 import org.w3c.dom.Text;
 
@@ -31,14 +33,14 @@ public class SummaryListPanel {
 		this.context = context;
 	}
 	
-	  public LinearLayout build(List<AnswerBean> bean) {
+	  public LinearLayout build(SurveyBean surveyBean, List<AnswerBean> answerBeans) {
 	   panel = new LinearLayout(context);
 	   
         
-        SummaryListModel data[] = new SummaryListModel[bean.size()];
+        SummaryListModel data[] = new SummaryListModel[answerBeans.size()];
         
-        for(int i=0; i < bean.size(); i++) {
-        	data[i] = new SummaryListModel(R.drawable.arrow_right, bean.get(i));
+        for(int i=0; i < answerBeans.size(); i++) {
+        	data[i] = new SummaryListModel(R.drawable.arrow_right, answerBeans.get(i));
         }
        
         SummaryListAdapter adapter = new SummaryListAdapter(context, R.layout.listview_list_item_row, data);
@@ -55,11 +57,14 @@ public class SummaryListPanel {
 				 SummaryListModel model = (SummaryListModel) adapter.getItemAtPosition(pos);
 				 // TODO: maybe add a sequential number for the position of the question
 				 qp.changePage(Integer.valueOf(model.answerBean.getQuestionBean().getNumber()) -1);
+				
 				} catch(Exception e) {
 					
 				}
 			}
 		});
+        
+        AnswerUtils.createJSONAnswer(surveyBean, answerBeans);
         
 	    panel.addView(listView);
 	    return panel;

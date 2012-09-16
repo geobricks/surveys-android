@@ -33,8 +33,40 @@
 			"en_indicator" : "Wealth" 
 		},
 		{ 	
-			"answer_type" : "multiple_choice", 	
+			"answer_type" : "single_value_date", 	
 			"question_number" : "4", 	
+			"en_text" : "In which date did you became rich date?", 	
+			"en_info" : "Yes the date when you got rich...", 	
+			"en_indicator" : "Wealth" 
+		},
+		{ 	
+			"answer_type" : "multiple_choice", 	
+			"question_number" : "5", 	
+			"en_text" : "What's your education level?", 	
+			"en_info" : "Determine if a person as a higher education", 	
+			"en_indicator" : "Education Level",
+			"choices" : [
+				{
+					"en_choice_label" : "Illiterate",
+					"it_choice_label" : "Analfabeta",
+					"choice_code" : "0"
+				},
+				{
+					"en_choice_label" : "Primary",
+					"it_choice_label" : "Elementare",
+					"choice_code" : "1"
+				},
+				{
+					"en_choice_label" : "University",
+					"it_choice_label" : "Universita",
+					"choice_code" : "2"
+				}
+			] 
+		} 
+		,
+		{ 	
+			"answer_type" : "single_choice", 	
+			"question_number" : "6", 	
 			"en_text" : "What's your education level?", 	
 			"en_info" : "Determine if a person as a higher education", 	
 			"en_indicator" : "Education Level",

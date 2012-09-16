@@ -49,8 +49,7 @@ public class QuestionMultiselection extends QuestionValue  {
     // When item is tapped, toggle checked properties of CheckBox and Planet.
     mainListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
       @Override
-      public void onItemClick( AdapterView<?> parent, View item, 
-                               int position, long id) {
+      public void onItemClick( AdapterView<?> parent, View item, int position, long id) {
         Data planet = listAdapter.getItem( position );
         planet.toggleChecked();
         DatatViewHolder viewHolder = (DatatViewHolder) item.getTag();
@@ -152,7 +151,7 @@ public class QuestionMultiselection extends QuestionValue  {
       // Reuse existing row view
       else {
         // Because we use a ViewHolder, we avoid having to call findViewById().
-    	  DatatViewHolder viewHolder = (DatatViewHolder) convertView.getTag();
+    	 DatatViewHolder viewHolder = (DatatViewHolder) convertView.getTag();
         checkBox = viewHolder.getCheckBox() ;
         textView = viewHolder.getTextView() ;
       }
@@ -177,4 +176,10 @@ public class QuestionMultiselection extends QuestionValue  {
 public Object onRetainNonConfigurationInstance() {
     return values ;
   }
+
+public ArrayAdapter<Data> getListAdapter() {
+	return listAdapter;
+}
+
+
 }

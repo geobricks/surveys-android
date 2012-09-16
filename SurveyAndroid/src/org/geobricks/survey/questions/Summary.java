@@ -7,6 +7,7 @@ import java.util.UUID;
 import org.geobricks.survey.R;
 import org.geobricks.survey.bean.AnswerBean;
 import org.geobricks.survey.bean.QuestionBean;
+import org.geobricks.survey.bean.SurveyBean;
 import org.geobricks.survey.questions.types.QuestionBoolean;
 import org.geobricks.survey.questions.types.QuestionDate;
 import org.geobricks.survey.questions.types.QuestionEditText;
@@ -14,6 +15,7 @@ import org.geobricks.survey.questions.types.QuestionMultiselection;
 import org.geobricks.survey.questions.types.QuestionSpinner;
 import org.geobricks.survey.questions.types.QuestionValue;
 import org.geobricks.survey.summary.SummaryListPanel;
+import org.geobricks.survey.utils.AnswerUtils;
 
 import android.app.AlertDialog;
 import android.graphics.Color;
@@ -73,26 +75,18 @@ public class Summary extends Question {
 			// the view hierarchy; it would just never be used.
 			return null;
 		}
-
-		
+	
 		QuestionsPager qp = (QuestionsPager) getActivity();
+		SurveyBean surveyBean = qp.getSurveyBean();
 		List<AnswerBean> answerBeans = new ArrayList<AnswerBean>();
-		for(Question q : qp.getQuestionFragments() ) {
-			try {
-				answerBeans.add(getAnswerBean(q));
-//				QuestionEditText qe = (QuestionEditText) q.getQuestionValue();
-//				Log.i("SUMMARY", q.getQuestionBean().getNumber() + " | "+ q.getQuestionBean().getText() + " | " + qe.getValue().getText());
-			}catch(Exception e) {
-				
-			}
-		}
 		
-		for(AnswerBean ab : answerBeans ) {
+		// -2 because the latest two are the summeries fragments
+		for(int i = 0; i < qp.getQuestionFragments().size() -2; i++) {
 			try {
-				Log.i("SUMMARY", ab.getQuestionBean().getNumber() + " | "+ ab.getQuestionBean().getText() + " | " + ab.getResult());
-			}catch(Exception e) {
-			}
+				answerBeans.add(AnswerUtils.getAnswerBean(qp.getQuestionFragments().get(i)));
+			}catch(Exception e) {}
 		}
+
 
 		panel = new LinearLayout(getActivity());
 		panel.setOrientation(LinearLayout.VERTICAL);
@@ -101,74 +95,13 @@ public class Summary extends Question {
 		llp.weight = 1.0f;
 		panel.setLayoutParams(llp);
 		panel.setBackgroundColor(Color.WHITE);
-		LinearLayout h = new LinearLayout(getActivity());	
 
 		SummaryListPanel slp = new SummaryListPanel(getActivity());
-		panel.addView(slp.build(answerBeans));
+		panel.addView(slp.build(surveyBean, answerBeans));
 		
 		return panel;
 	}
 	
-	private AnswerBean getAnswerBean(Question q) {
-		AnswerBean answerBean = new AnswerBean();
-		QuestionBean qb = q.getQuestionBean();
-		answerBean.setQuestionBean(qb);
-		
-		Log.i("ANSWERTYPE", String.valueOf(qb.getType()));
-
-		LinearLayout panel = new LinearLayout(getActivity());
-		panel.setOrientation(LinearLayout.VERTICAL);
-		LinearLayout.LayoutParams llp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.FILL_PARENT,LinearLayout.LayoutParams.FILL_PARENT);
-		llp.setMargins(5, 5, 5, 5);
-		
-		
-		QuestionEditText qe;	
-		if ( qb.getType() != null) {
-			switch (qb.getType()) {
-				case SINGLE_VALUE_NUMBER:
-					qe = (QuestionEditText) q.getQuestionValue();
-					answerBean.setResult(qe.getValue().getText().toString());
-					answerBean.setAnswered(true);
-					break;
-				case SINGLE_VALUE_TEXT:
-					qe = (QuestionEditText) q.getQuestionValue();
-					answerBean.setResult(qe.getValue().getText().toString());
-					answerBean.setAnswered(true);
-					break;
-				case FREE_TEXT:
-					qe = (QuestionEditText) q.getQuestionValue();
-					answerBean.setResult(qe.getValue().getText().toString());
-					answerBean.setAnswered(true);
-					break;
-				case SINGLE_VALUE_DATE:
-					QuestionDate qd = (QuestionDate) q.getQuestionValue();
-					answerBean.setResult(String.valueOf(qd.getValue().getYear()));
-					answerBean.setAnswered(true);
-//					questionValue = new QuestionDate(getActivity());
-//					((QuestionDate) questionValue).build();
-					break;
-				case SINGLE_VALUE_BOOLEAN:
-//					questionValue = new QuestionBoolean(getActivity());
-//					((QuestionBoolean) questionValue).build();
-					break;
-				case SINGLE_CHOICE:
-//					questionValue = new QuestionSpinner(getActivity());
-//					((QuestionSpinner) questionValue).build(null, qb.getChoicesBean().getChoices());
-					break;
-				case MULTIPLE_CHOICE:
-//					questionValue = new QuestionMultiselection(getActivity());
-//					((QuestionMultiselection) questionValue).build(qb.getChoicesBean().getChoices());
-					break;
-		
-				default: break;
-			}
-			try {
-//				panel.addView(questionValue.getPanel(), llp);
-			}catch(Exception e ){}
-		}
-		return answerBean;
-	}
-
 	
 	// WORKAROUND: google bux fix
 	@Override

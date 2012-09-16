@@ -95,7 +95,7 @@ public class ParserUtils {
 			try {
 				SURVEYINFO c = SURVEYINFO.valueOf(key.toUpperCase());
 				switch (c) {
-					case ID: surveyBean.setId(map.get(key)); break;
+					case _ID: surveyBean.setId(map.get(key)); break;
 					case MODEL_QUESTIONS: surveyBean.setQuestions(parseQuestions(map.get(key), language)); break;
 					default: break;
 				}
@@ -223,6 +223,17 @@ public class ParserUtils {
 				//these are the language based fields
 				Data d = new Data();
 				for(String key : map.keySet()) {
+					try {
+						QUESTIONINFO c = QUESTIONINFO.valueOf(key.toUpperCase());
+						Log.i("QUESTION", key +" " + c.toString());
+						switch (c) {
+							case CHOICE_CODE: d.setCode(map.get(key)); 
+							default: break;
+						}
+					}catch(Exception e) {}
+				}
+				
+				for(String key : map.keySet()) {
 					Log.i("KEY: ", key);
 					String cutkey = cutKey(key);
 					Log.i("cutkey: ", cutkey);
@@ -230,16 +241,15 @@ public class ParserUtils {
 						QUESTIONINFO c = QUESTIONINFO.valueOf(cutkey.toUpperCase());
 						String keylanguage = language + "_"+ cutkey;
 						Log.i("k: ", keylanguage);
+						Log.i("QUESTION", key +" " + c.toString());
 						switch (c) {
-							case CHOICE_CODE: d.setCode(map.get(key)); break;
 							case CHOICE_LABEL: d.setLabel(map.get(keylanguage)); break;
 							default: break;
 						}
 					}catch(Exception e) {}			
 				}
-				Log.i("DATa",d.getLabel());
+				Log.i("QUESTION",d.getCode() +" |"+d.getLabel());
 				data.add(d);
-				
 			}
 		} catch (JSONException e) {Log.e("JSON", e.getMessage());}
 		return data;

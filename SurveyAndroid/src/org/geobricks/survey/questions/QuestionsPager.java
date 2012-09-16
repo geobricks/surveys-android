@@ -19,6 +19,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
@@ -34,6 +35,8 @@ public class QuestionsPager extends FragmentActivity {
 		Button nextButton;
 		
 		Button backButton;
+		
+//		ImageView backButton;
 		
 		Button summaryButton;
 

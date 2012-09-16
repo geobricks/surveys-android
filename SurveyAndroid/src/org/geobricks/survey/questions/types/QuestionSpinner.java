@@ -5,6 +5,7 @@ import java.util.List;
 import org.geobricks.survey.utils.Data;
 
 import android.content.Context;
+import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
@@ -22,6 +23,8 @@ public class QuestionSpinner extends QuestionValue {
  	}
  	
  	public LinearLayout build(Integer type, List<Data> values) {
+ 		for ( Data d : values )
+ 			Log.i("QUESTION", d.getCode() + " "+ d.getLabel()) ;
  		panel = new LinearLayout(context);
 		llp.setMargins(5, 15, 5, 5);
 		panel.setLayoutParams(llp);

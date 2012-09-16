@@ -23,22 +23,18 @@ public class QuestionBoolean extends QuestionValue {
  		panel = new LinearLayout(context);
 		llp.setMargins(5, 15, 5, 5);
 		panel.setLayoutParams(llp);
- 	 	value = new RadioGroup(context);
-// 	 	value.setOrientation(RadioGroup.VERTICAL);
- 	 	
+ 	 	value = new RadioGroup(context); 	
  	 	
  	 	RadioButton yes = new RadioButton(context);
- 	 	yes.setText("YES");
- 	 	
- 	 	
+ 	 	yes.setText(R.string.yes);
+ 	 	yes.setId(R.string.yes);
+	
  	 	RadioButton no = new RadioButton(context);
  	 	no.setText(R.string.no);
- 	 	
+ 	 	no.setId(R.string.no);
+
  	 	value.addView(yes);
  	 	value.addView(no);
-
- 	 	
-
  		panel.addView(value, llp);
  		return panel;
  	}
