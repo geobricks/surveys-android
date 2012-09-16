@@ -8,6 +8,7 @@ import org.geobricks.survey.bean.ChoicesBean;
 import org.geobricks.survey.bean.QuestionBean;
 import org.geobricks.survey.bean.SurveyBean;
 import org.geobricks.survey.questions.Question;
+import org.geobricks.survey.questions.Summary;
 import org.geobricks.survey.questions.types.QuestionBoolean;
 import org.geobricks.survey.questions.types.QuestionDate;
 import org.geobricks.survey.questions.types.QuestionEditText;
@@ -18,6 +19,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.app.DownloadManager.Query;
+import android.content.Context;
 import android.util.Log;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -26,7 +28,7 @@ import android.widget.RadioButton;
 
 public class AnswerUtils {
 	
-	public static AnswerBean getAnswerBean(Question q) {
+	public static AnswerBean getAnswerBean(Context context, Question q) {
 		AnswerBean answerBean = new AnswerBean();
 		QuestionBean qb = q.getQuestionBean();
 		answerBean.setQuestionBean(qb);
@@ -39,22 +41,26 @@ public class AnswerUtils {
 			switch (qb.getType()) {
 				case SINGLE_VALUE_NUMBER:
 					qe = (QuestionEditText) q.getQuestionValue();
-					answerBean.setResult(qe.getValue().getText().toString());
+					answerBean.setTextResult(qe.getValue().getText().toString());
+					answerBean.setValueResult(qe.getValue().getText().toString());
 					answerBean.setAnswered(true);
 					break;
 				case SINGLE_VALUE_TEXT:
 					qe = (QuestionEditText) q.getQuestionValue();
-					answerBean.setResult(qe.getValue().getText().toString());
+					answerBean.setTextResult(qe.getValue().getText().toString());
+					answerBean.setValueResult(qe.getValue().getText().toString());
 					answerBean.setAnswered(true);
 					break;
 				case FREE_TEXT:
 					qe = (QuestionEditText) q.getQuestionValue();
-					answerBean.setResult(qe.getValue().getText().toString());
+					answerBean.setTextResult(qe.getValue().getText().toString());
+					answerBean.setValueResult(qe.getValue().getText().toString());					
 					answerBean.setAnswered(true);
 					break;
 				case SINGLE_VALUE_DATE:
 					QuestionDate qd = (QuestionDate) q.getQuestionValue();
-					answerBean.setResult(String.valueOf(qd.getValue().getDayOfMonth() +"/" + (qd.getValue().getMonth() + 1)+"/"+ qd.getValue().getYear()));
+					answerBean.setTextResult(String.valueOf(qd.getValue().getDayOfMonth() +"/" + (qd.getValue().getMonth() + 1)+"/"+ qd.getValue().getYear()));
+					answerBean.setValueResult(String.valueOf(qd.getValue().getDayOfMonth() +"/" + (qd.getValue().getMonth() + 1)+"/"+ qd.getValue().getYear()));
 					answerBean.setAnswered(true);
 					break;
 				case SINGLE_VALUE_BOOLEAN:
@@ -62,20 +68,22 @@ public class AnswerUtils {
 					int btn = qboolean.getValue().getCheckedRadioButtonId();
 				    switch (btn) {
 					    case R.string.yes:
-							answerBean.setResult("0");
+							answerBean.setTextResult(context.getString(R.string.yes));
+							answerBean.setValueResult("0");		
 							answerBean.setAnswered(true);
 					    break;
 					    case R.string.no:
-							answerBean.setResult("1");
-							answerBean.setAnswered(true);				    
+							answerBean.setTextResult(context.getString(R.string.no));
+							answerBean.setValueResult("1");		
+							answerBean.setAnswered(true);				    			
 							break;
 				    }
 					break;
 				case SINGLE_CHOICE:
 					QuestionSpinner qs = (QuestionSpinner) q.getQuestionValue();
 					Data d = (Data) qs.getSpinner().getSelectedItem();
-					answerBean.setResult(d.getLabel());
-					answerBean.getAnswerChoicesBean().addData(d);
+					answerBean.setTextResult(d.getLabel());
+					answerBean.setValueResult(d.getCode());	
 					answerBean.setAnswered(true);	
 					break;
 				case MULTIPLE_CHOICE:
@@ -94,7 +102,7 @@ public class AnswerUtils {
 						}
 						
 					}
-					answerBean.setResult(v);
+					answerBean.setTextResult(v);
 					break;
 		
 				default: break;
@@ -173,10 +181,10 @@ public class AnswerUtils {
 	
 	private static JSONObject createObjAnswer(AnswerBean ab) {
 		try {
-			if ( ab.getResult() != null) {
+			if ( ab.isAnswered() ) {
 				JSONObject data = new JSONObject();		
 				data.put("question_id", ab.getQuestionBean().getNumber());
-				data.put("answer", ab.getResult());
+				data.put("answer", ab.getTextResult());
 				return data;
 			}
 			

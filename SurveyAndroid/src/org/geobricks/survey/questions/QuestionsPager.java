@@ -170,6 +170,13 @@ public class QuestionsPager extends FragmentActivity {
 			
 			Log.i("SIZE", String.valueOf(height));
 			
+			// WORKAROUND to load all the pages
+//			for(int j=0; j < questionFragments.size(); j++) {
+//				Log.i("QUESTION ", String.valueOf(j));
+//				changePage(j);
+//			}
+//			changePage(0);
+			
 			
 			Toast.makeText(this, String.valueOf(height), Toast.LENGTH_LONG);
 

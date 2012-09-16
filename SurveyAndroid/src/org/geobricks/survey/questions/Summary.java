@@ -83,7 +83,7 @@ public class Summary extends Question {
 		// -2 because the latest two are the summeries fragments
 		for(int i = 0; i < qp.getQuestionFragments().size() -2; i++) {
 			try {
-				answerBeans.add(AnswerUtils.getAnswerBean(qp.getQuestionFragments().get(i)));
+				answerBeans.add(AnswerUtils.getAnswerBean(qp.getApplicationContext(), qp.getQuestionFragments().get(i)));
 			}catch(Exception e) {}
 		}
 

@@ -26,16 +26,18 @@ public class QuestionBoolean extends QuestionValue {
  	 	value = new RadioGroup(context); 	
  	 	
  	 	RadioButton yes = new RadioButton(context);
- 	 	yes.setText(R.string.yes);
+ 	 	yes.setText(context.getString(R.string.yes));
  	 	yes.setId(R.string.yes);
+ 	 	yes.setTextAppearance(context, R.style.TextValue);
 	
  	 	RadioButton no = new RadioButton(context);
- 	 	no.setText(R.string.no);
+ 	 	no.setText(context.getString(R.string.no));
  	 	no.setId(R.string.no);
+ 	 	no.setTextAppearance(context, R.style.TextValue);
 
  	 	value.addView(yes);
  	 	value.addView(no);
- 		panel.addView(value, llp);
+ 		panel.addView(value);
  		return panel;
  	}
 

@@ -49,7 +49,7 @@ public class SummaryListAdapter extends ArrayAdapter<SummaryListModel>{
         
         SummaryListModel model = data[position];
         holder.txtName.setText(model.answerBean.getQuestionBean().getText());
-        holder.txtAbstract.setText(model.answerBean.getResult());
+        holder.txtAbstract.setText(model.answerBean.getTextResult());
         holder.imgIcon.setImageResource(model.icon);
         
         return row;

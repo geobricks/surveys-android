@@ -14,18 +14,31 @@ public class AnswerBean implements Serializable {
 	
 	ChoicesBean answerChoicesBean = new ChoicesBean();
 	
-	// free text date
-	String result;
+	// to show in the interface
+	String textResult;
+	
+	// to pass to JSON
+	String valueResult;
 	
 	boolean answered = false;
 
 
-	public String getResult() {
-		return result;
+
+
+	public String getTextResult() {
+		return textResult;
 	}
 
-	public void setResult(String result) {
-		this.result = result;
+	public void setTextResult(String textResult) {
+		this.textResult = textResult;
+	}
+
+	public String getValueResult() {
+		return valueResult;
+	}
+
+	public void setValueResult(String valueResult) {
+		this.valueResult = valueResult;
 	}
 
 	public ChoicesBean getAnswerChoicesBean() {
