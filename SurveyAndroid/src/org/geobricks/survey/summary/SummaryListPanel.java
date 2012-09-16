@@ -35,10 +35,10 @@ public class SummaryListPanel {
 	
 	  public LinearLayout build(SurveyBean surveyBean, List<AnswerBean> answerBeans) {
 	   panel = new LinearLayout(context);
-	   
-        
+
         SummaryListModel data[] = new SummaryListModel[answerBeans.size()];
         
+        // TODO: should be send also the surveybean so can be set in any case the titles of the question
         for(int i=0; i < answerBeans.size(); i++) {
         	data[i] = new SummaryListModel(R.drawable.arrow_right, answerBeans.get(i));
         }

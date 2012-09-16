@@ -81,12 +81,20 @@ public class Summary extends Question {
 		List<AnswerBean> answerBeans = new ArrayList<AnswerBean>();
 		
 		// -2 because the latest two are the summeries fragments
-		for(int i = 0; i < qp.getQuestionFragments().size() -2; i++) {
+//		for(int i = 0; i < qp.getQuestionFragments().size() -2; i++) {
+//			try {
+//				answerBeans.add(AnswerUtils.getAnswerBean(qp.getApplicationContext(), qp.getQuestionFragments().get(i)));
+//			}catch(Exception e) {}
+//		}
+
+		for(int i = 0; i < surveyBean.getQuestions().size(); i++) {
 			try {
-				answerBeans.add(AnswerUtils.getAnswerBean(qp.getApplicationContext(), qp.getQuestionFragments().get(i)));
+				AnswerBean answerBean = new AnswerBean();
+				answerBean.setQuestionBean(surveyBean.getQuestions().get(i));
+				answerBeans.add(answerBean);
+				AnswerUtils.getAnswerBean(qp.getApplicationContext(), answerBean, qp.getQuestionFragments().get(i));
 			}catch(Exception e) {}
 		}
-
 
 		panel = new LinearLayout(getActivity());
 		panel.setOrientation(LinearLayout.VERTICAL);

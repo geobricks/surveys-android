@@ -28,10 +28,10 @@ import android.widget.RadioButton;
 
 public class AnswerUtils {
 	
-	public static AnswerBean getAnswerBean(Context context, Question q) {
-		AnswerBean answerBean = new AnswerBean();
+	public static void getAnswerBean(Context context, AnswerBean answerBean, Question q) {
+//		AnswerBean answerBean = new AnswerBean();
 		QuestionBean qb = q.getQuestionBean();
-		answerBean.setQuestionBean(qb);
+//		answerBean.setQuestionBean(qb);
 		
 		Log.i("ANSWERTYPE", String.valueOf(qb.getType()));
 
@@ -112,7 +112,7 @@ public class AnswerUtils {
 				Log.i("ANSWER ERROR", e.getMessage());
 			}
 		}
-		return answerBean;
+//		return answerBean;
 	}
 	
 	public static void test() {
